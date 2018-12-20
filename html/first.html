@@ -31,8 +31,32 @@
             </p>
             <hr/>
                 <h2>Im&aacutegenes en HTML</h2>
-                <img src="imagenes/perro.jpg" alt="imagen de un perro" title="Foto de perro" width="255px"/>
+                <img src="imagenes/perro.jpg" alt="imagen de un perro" title="Foto de perro" width="355px"/>
             <hr/>
+            <h3>Formulario</h3>
+            <form>
+                <p>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" placeholder="Escribe tu nombre..."/>
+                </p>
+                <p>
+                    <label for="descripcion">Descripci&oacuten</label>
+                    <textarea name="descripcion"></textarea>
+                </p>
+                <input type="radio" name="genero" value="hombre">Hombre<br/>         
+                <input type="radio" name="genero" value="mujer">Mujer<br/>
+                <input type="radio" name="genero" value="nada">Nada<br/>
+
+                <select name="generados">
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                    <option value="nada">Nada</option>
+                </select>
+
+                <p>
+                    <input type="submit" value="Enviar formulario"/>
+                </p>                
+            </form>
             <h3>Listado de frutas</h3>
             <ol>
                 <li>Manzana</li>
