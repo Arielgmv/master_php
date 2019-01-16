@@ -51,4 +51,43 @@ if($edad>=$mayoria_edad){
 } else {
     echo '<h2>'.$nombre.' no es mayor de edad';
 }
+echo '<br/>';
+//Ejemplo 4
+$dia=6;
+/*if($dia==1){
+    echo 'Es Lunes';
+} else {
+    if($dia==2){
+        echo 'Es Martes';
+    } else {
+        if($dia==3){
+            echo 'Es Miercoles';
+        } else {
+            if($dia==4){
+                echo 'Es Jueves';
+            }else{
+                if($dia==5){
+                    echo 'Es Viernes';
+                } else {
+                    if($dia==6){
+                    echo 'Es Fin de Semana';
+                    }
+                }
+            }
+        }
+    }
+}*/
+if($dia==1){
+    echo 'Lunes';
+}elseif ($dia==2) {
+    echo 'Martes';
+}elseif ($dia==3){
+    echo 'Miercoles';
+}elseif ($dia==4){
+    echo 'Jueves';
+}elseif ($dia==5){
+    echo 'Viernes';
+} else {
+    echo 'Es fin de semana';
+}
 ?>
