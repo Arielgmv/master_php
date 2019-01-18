@@ -18,6 +18,12 @@
  * < mayor que
  * <= menor o igual que
  * >= mayor o igual que
+ * ││
+ * Operadores lógicos
+ * && and
+ * ││ or
+ * ! not
+ * and, or
  */
 //Ejemplo 1
 $color='azul';
@@ -90,4 +96,53 @@ if($dia==1){
 } else {
     echo 'Es fin de semana';
 }
+echo '<br/>';
+//Ejemplo 5
+$edad1=18;
+$edad2=64;
+$edad_oficial=17;
+if($edad_oficial>=$edad1&&$edad_oficial<=$edad2){
+    echo 'Está en edad de trabajar';
+}else{
+    echo 'No está en edad de trabajar';
+}
+echo '<br/>';
+$pais='USA';
+if($pais=='Mexico'||$pais=='España'||$pais=='Bolivia'){
+    echo 'En este país se habla español';
+} else {
+    echo 'No se habla español';
+}
+echo '<br/>';
+//Ejemplo 6 switch
+$dia=1;
+switch ($dia){
+    case 1:
+        echo 'Lunes';
+        break;
+    case 2:
+        echo 'Martes';
+        break;
+    case 3:
+        echo 'Miercoles';
+        break;
+    case 4:
+        echo 'Jueves';
+        break;
+    case 5:
+        echo 'Viernes';
+        break;
+    default:
+        echo 'Es fin de semana';
+}
+echo '<br/>';
+//Ejemplo 7 go to
+goto marca;
+echo '<h3>Instruccion 1</h3>';
+echo '<h3>Instruccion 2</h3>';
+echo '<h3>Instruccion 3</h3>';
+echo '<h3>Instruccion 4</h3>';
+
+marca:
+echo 'me he saltado 4 echos';
 ?>
