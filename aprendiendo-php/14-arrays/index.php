@@ -29,5 +29,39 @@ echo '</ul>';
 echo '<hr/>';
 echo '<h1>Listado de cantantes</h1>';
 foreach ($cantantes as $cantante) {
-    echo '<ul><li>'.$cantante.'</li></ul>';
+    echo '<ul><li>'.$cantante.'</li>6</ul>';
 }
+echo '<hr/>';
+//Arrays asociativos
+$personas=array(
+    'nombre'=>'Ariel',
+    'apellidos'=>'Muñoz',
+    'web'=>'www.atuxempleos.com'
+);
+var_dump($personas);
+echo '<br/>';
+var_dump($personas['apellidos']);
+echo '<br/>';
+echo($personas['apellidos']);
+
+echo '<hr/>';
+//Arrays multidimensionales
+$contactos=array(
+    array(
+        'nombre'=>'Ana',
+        'apellido'=>'Garcia'
+    ),
+    array(
+        'nombre'=>'Oswaldo',
+        'apellido'=>'Soliz'
+    ),
+    array(
+        'nombre'=>'Mauricio',
+        'apellido'=>'Villegas'
+    ),
+    array(
+        'nombre'=>'Rodrigo',
+        'apellido'=>'Soliz'
+    ),
+);
+var_dump($contactos);
