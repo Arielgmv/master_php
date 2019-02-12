@@ -7,6 +7,20 @@
  * COD      Crash       PES
  * PUG      POP         MotoGP 19
  * 
- * Cada columna debe ir es un fichero separado (includes)
+ * Cada fila debe ir es un fichero separado (includes)
  */
+$tabla=array(
+    'Accion'=>array('GTA', 'Call of Duty', 'PUG'),
+    'Aventura'=>array('ASSASINS', 'Crash Bandicoot', 'Prince of Persia'),
+    'Deportes'=>array('Fifa', 'PES', 'MotoGP 19')
+);
 
+//var_dump(array_keys($tabla));
+$categorias= array_keys($tabla);
+?>
+<table border="1">
+    <?php require_once 'ejercicio5/encabezados.php'; ?>
+    <?php require_once 'ejercicio5/primera.php'; ?>
+    <?php require_once 'ejercicio5/segunda.php'; ?>
+    <?php require_once 'ejercicio5/tercera.php'; ?>
+</table>
