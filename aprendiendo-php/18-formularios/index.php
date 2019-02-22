@@ -18,7 +18,7 @@
             
             <label for="sexo">Sexo:</label>            
             <p>
-                Hombre: <input type="checkbox" name="sexo" value="hombre"/>
+                Hombre: <input type="checkbox" name="sexo" value="hombre"/><br/>
                 Mujer: <input type="checkbox" name="sexo" value="mujer" checked="checked"/>
             </p>
             
