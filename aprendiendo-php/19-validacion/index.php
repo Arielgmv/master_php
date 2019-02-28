@@ -9,7 +9,7 @@
         <?php
             if(isset($_GET['error'])){
                 $error=$_GET['error'];
-                if($error=='faltan_valores'){
+                if($error=='faltan valores'){
                     echo '<strong style="color:red">Introduce todos los datos en todos los datos del formulario</strong>';
                 }
             }
@@ -19,7 +19,7 @@
             <input type="text" name="nombre" required="required" pattern="[A-Za-z]+"><br/>
             
             <label for="apellidos">Apellidos</label><br/>
-            <input type="text" name="apellidos" required="" pattern="[A-Za-z]+"><br/>
+            <input type="text" name="apellidos" pattern="[A-Za-z]+"><br/>
             
             <label for="edad">Edad</label><br/>
             <input type="number" name="edad" required="required" pattern="[0-9]+"><br/>
