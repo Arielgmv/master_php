@@ -12,6 +12,9 @@
                 if($error=='faltan valores'){
                     echo '<strong style="color:red">Introduce todos los datos en todos los datos del formulario</strong>';
                 }
+                if($error=='apellidos'){
+                    echo '<strong style="color:red">Introduce bien el apellido</strong>';
+                }
             }
         ?>
         <form method="POST" action="procesar_formulario.php">
@@ -19,7 +22,7 @@
             <input type="text" name="nombre" required="required" pattern="[A-Za-z]+"><br/>
             
             <label for="apellidos">Apellidos</label><br/>
-            <input type="text" name="apellidos" pattern="[A-Za-z]+"><br/>
+            <input type="text" name="apellidos"><br/>
             
             <label for="edad">Edad</label><br/>
             <input type="number" name="edad" required="required" pattern="[0-9]+"><br/>

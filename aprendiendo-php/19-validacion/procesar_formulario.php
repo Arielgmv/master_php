@@ -6,29 +6,34 @@ if(!empty($_POST['nombre']) && !empty($_POST['apellidos']) && !empty($_POST['eda
     $error = 'ok';
     $nombre = $_POST['nombre'];
     $apellidos = $_POST['apellidos'];
-    $edad = $_POST['edad'];
+    $edad = (int) $_POST['edad'];
     $email = $_POST['email'];
     $password = $_POST['pass'];
     //validar el nombre
-    if(!is_string($nombre) && !preg_match('/[a-zA-Z ]+/', $nombre)){
+    if(!is_string($nombre) || preg_match('/[0-9]+/', $nombre)){
         $error = 'nombre';        
     }
     //validar el apellido
-    if(!is_string($apellidos) && !preg_match('/[a-zA-Z ]+/', $apellidos)){
-        $error = 'nombre';        
+    if(!is_string($apellidos) || preg_match('/[0-9]+/', $apellidos)){
+        $error = 'apellidos';        
     }
     //validar la edad
-    if(!is_int($edad) && !filter_var($edad, FILTER_VALIDATE_INT)){
+    if(!is_int($edad) || !filter_var($edad, FILTER_VALIDATE_INT)){
         $error = 'edad';        
     }
     //validar el email
-    if(!is_string($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)){
+    if(!is_string($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
         $error = 'email';        
     }
     //validar el password
-    if(empty($password) && strlen($password)<5){
+    if(empty($password) || strlen($password)<5){
         $error = 'password';        
     }
+    /*
+    //debug
+    var_dump($_POST);
+    var_dump($error);
+    die();*/
 } else {
     $error = 'faltan valores';    
 }
