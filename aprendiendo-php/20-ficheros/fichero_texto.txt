@@ -1,0 +1,3 @@
+hola soy un archivo de texto 22
+prueba de segunda línea
+prueba de tercera líneaSoy una línea de textoSoy una línea de textoSoy una línea de texto
