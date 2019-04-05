@@ -32,6 +32,7 @@ if(isset($_GET['numero'])){
     tabla($_GET['numero']);
     tabla(3);
     tabla(20);
+    tabla(5);
 } else {
     echo 'No hay número para sacar la tabla';
 }
