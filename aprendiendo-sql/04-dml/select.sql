@@ -26,3 +26,41 @@ SELECT CONCAT(nombre, ' ', apellidos) AS Concatenación FROM usuarios;
 SELECT LENGTH(nombre) AS Extensión FROM usuarios;
 SELECT CONCAT('      ', nombre, '  ', apellidos) AS Concatenación FROM usuarios;
 SELECT TRIM(CONCAT('      ', nombre, '  ', apellidos)) AS Limpieza_Espacios_Blanco FROM usuarios;
+
+#Funciones Fecha#
+#Current Date#
+SELECT email, fecha, CURDATE() FROM usuarios;
+SELECT email, fecha, CURDATE() AS 'Fecha Actual' FROM usuarios;
+#días diferencia#
+SELECT email, DATEDIFF(fecha, CURDATE()) AS 'Fecha Actual' FROM usuarios;
+SELECT email, DAYNAME(fecha) AS 'Fecha Actual' FROM usuarios;
+#fecha del mes, semana, año#
+SELECT email, DAYOFMONTH(fecha) AS 'Fecha Actual' FROM usuarios;
+SELECT email, DAYOFWEEK(fecha) AS 'Fecha Actual' FROM usuarios;
+SELECT email, DAYOFYEAR(fecha) AS 'Fecha Actual' FROM usuarios;
+#mes del año#
+SELECT email, MONTH(fecha) AS 'Fecha Actual' FROM usuarios;
+#año#
+SELECT email, YEAR(fecha) AS 'Fecha Actual' FROM usuarios;
+#Hora Actual#
+SELECT email, CURTIME(fecha) AS 'Fecha Actual' FROM usuarios;
+#hora del servidor#
+SELECT email, SYSDATE() AS 'Fecha Actual' FROM usuarios;
+#Formatear el campo fecha#
+SELECT email, DATE_FORMAT(fecha, '%d-%M-%Y') FROM usuarios;
+
+#Funciones generales#
+#Saber si es nulo#
+SELECT email, ISNULL(apellidos) FROM usuarios; 
+
+#Comprobar si dos campos son iguales#
+SELECT email, STRCMP(nombre, password) AS Compración FROM usuarios;
+
+#versión de mysql#
+SELECT VERSION() FROM usuarios;
+
+#usuario de mysql#
+SELECT USER() FROM usuarios;
+
+#si es nulo#
+SELECT IFNULL(apellidos, 'Campo vacio') FROM usuarios;
