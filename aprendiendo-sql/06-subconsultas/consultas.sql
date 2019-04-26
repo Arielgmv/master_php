@@ -15,3 +15,16 @@ SELECT * FROM usuarios WHERE id NOT IN (SELECT usuario_id FROM entradas);
 
 /*Sacar los usuarios que tengan alguna entrada que en su título hable de Assasins*/
 SELECT * FROM usuarios WHERE id IN (SELECT usuario_id FROM entradas WHERE titulo like '%Assasins%');
+
+/*Sacar todas las entradas de la categoría acción utilizando su nombre*/
+SELECT * FROM entradas WHERE categoria_id IN (SELECT id FROM categorias WHERE nombre='Acción');
+
+/*Mostrar las categorías con más de 3 o más entradas*/
+SELECT nombre FROM categorias WHERE id IN (SELECT categoria_id FROM entradas GROUP BY categoria_id HAVING COUNT(categoria_id)>=3);
+
+
+/*Mostrar los usuarios que crearon una entrada un martes*/
+
+/*Mostrar el nombre del usuario que tenga más entradas*/
+
+/*Mostrar las categorías sin entradas*/
