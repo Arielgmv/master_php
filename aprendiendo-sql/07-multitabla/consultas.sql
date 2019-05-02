@@ -19,6 +19,18 @@ SELECT c.nombre AS 'Categoría', COUNT(e.id) AS 'Cantidad de entradas'
 FROM categorias c, entradas e
 WHERE e.categoria_id=c.id GROUP BY e.categoria_id;
 
+/*Left Join (muestra todas las filas de la tabla de la izquierda)*/
+SELECT c.nombre AS 'Categoría', COUNT(e.id) AS 'Cantidad de entradas'
+FROM categorias c
+LEFT JOIN entradas e ON e.categoria_id=c.id
+GROUP BY e.categoria_id;
+
+/*Right Join (muestra todas las filas de la tabla de la derecha)*/
+SELECT c.nombre AS 'Categoría', COUNT(e.id) AS 'Cantidad de entradas'
+FROM entradas e
+RIGHT JOIN  categorias c ON e.categoria_id=c.id
+GROUP BY e.categoria_id;
+
 /*Mostrar el email de los usuarios y al lado cuantas entradas tienen*/
 SELECT u.email, COUNT(titulo) FROM usuarios u, entradas e
 WHERE e.usuario_id=u.id GROUP BY e.usuario_id;
