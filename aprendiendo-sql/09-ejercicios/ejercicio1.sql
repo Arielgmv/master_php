@@ -89,10 +89,16 @@ INSERT INTO vendedores VALUES(null, 6, 8, 'Luis', 'Sanchez', 'Ayudante de tienda
 
 /*Clientes*/
 INSERT INTO clientes VALUES(null, 1, 'Rodrigo Soliz', 'La Paz', 9000, CURDATE());
-INSERT INTO clientes VALUES(null, 1, 'CodeRoad', 'Cochabamba', 12000, CURDATE());
-INSERT INTO clientes VALUES(null, 1, 'Imprenta Martinez', 'Santa Cruz', 12000, CURDATE());
-INSERT INTO clientes VALUES(null, 1, 'Jesus Colchones', 'Sucre', 12000, CURDATE());
+INSERT INTO clientes VALUES(null, 1, 'CodeRoad', 'Cochabamba', 18000, CURDATE());
+INSERT INTO clientes VALUES(null, 1, 'Imprenta Martinez', 'Santa Cruz', 35000, CURDATE());
+INSERT INTO clientes VALUES(null, 1, 'Jesus Colchones Inc', 'Sucre', 14000, CURDATE());
+INSERT INTO clientes VALUES(null, 1, 'Bar Pepe srl', 'Tarija', 23000, CURDATE());
+INSERT INTO clientes VALUES(null, 1, 'Tienda PC', 'Santa Cruz', 24000, CURDATE());
 
 /*Encargos*/
 INSERT INTO encargos VALUES(null, 1, 6, 1, CURDATE());
-INSERT INTO encargos VALUES(null, 1, 2, 1, CURDATE());
+INSERT INTO encargos VALUES(null, 2, 2, 1, CURDATE());
+INSERT INTO encargos VALUES(null, 3, 3, 2, CURDATE());
+INSERT INTO encargos VALUES(null, 4, 4, 1, CURDATE());
+INSERT INTO encargos VALUES(null, 5, 5, 1, CURDATE());
+INSERT INTO encargos VALUES(null, 6, 1, 2, CURDATE());
