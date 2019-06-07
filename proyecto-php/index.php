@@ -3,10 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <title>Blog de videojuegos</title>
+        <link rel='stylesheet' type='text/css' href='./assets/css/style.css' />
     </head>
     <body>
         <!--Cabecera-->
-        <header id='header'>
+        <header id='cabecera'>
             <!--Logo-->
             <div id='logo'>
                 <a href='index.php'>
@@ -14,7 +15,7 @@
                 </a>
             </div>
             <!--Menu-->
-            <nav id='nav'>
+            <nav id='menu'>
                 <ul>
                     <li>
                         <a href='index.php'>Inicio</a>
@@ -40,19 +41,88 @@
                 </ul>
             </nav>
         </header>
-        <div id='container'>      
+        <div id='contenedor'>      
             <!--Barra Lateral-->
             <aside id='sidebar'>
-                <div id='login'>
+                <div id='login' class='bloque'>
                     <h3>Identificate</h3>
                     <form action='login.php' method='POST'>
                         <label for='email'>Email</label>
-                        <input type='text' name='email'/>
+                        <input type='email' name='email'/>
+
+                        <label for='password'>Contraseña</label>
+                        <input type='password' name='password'/>
+
+                        <input type='submit' value='Entrar' />
+                    </form>
+                </div>
+
+                <div id='register' class='bloque'>
+                    <h3>Registrate</h3>
+                    <form action='registro.php' method='POST'>
+                        <label for='nombre'>Nombre</label>
+                        <input type='text' name='nombre'/>
+                        
+                        <label for='apellidos'>Apellidos</label>
+                        <input type='text' name='apellidos'/>
+
+                        <label for='email'>Email</label>
+                        <input type='email' name='email'/>
+
+                        <label for='password'>Contraseña</label>
+                        <input type='password' name='password'/>
+
+                        <input type='submit' value='Registrar' />
                     </form>
                 </div>
             </aside>
             <!--Caja Principal-->
+            <div id='principal'>
+                <h1>Ultimas entradas</h1>
+                <article class='entrada'>
+                    <h2>Titulo de mi entrada</h2>
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                    </p>
+                </article>
+                <article class='entrada'>
+                    <h2>Titulo de mi entrada</h2>
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                    </p>
+                </article>
+                <article class='entrada'>
+                    <h2>Titulo de mi entrada</h2>
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                    </p>
+                </article>
+            </div>
         </div>
         <!--Pie de Pagina-->
+        <footer id='pie'>
+            <p>Desarrollado por Ariel Munoz &copy; 2018</p>
+        </footer>
     </body>
 </html>
