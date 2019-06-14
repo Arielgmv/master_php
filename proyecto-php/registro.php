@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST)){
     /*if(isset($_POST['nombre'])){
         $nombre=$_POST['nombre'];
@@ -13,6 +14,7 @@ if(isset($_POST)){
     
     //Array de errores
     $errores=array();
+    
     //Validar los datos antes de guardarlos en la base de datos
     
     //Validar campo nombre
@@ -42,9 +44,15 @@ if(isset($_POST)){
         $password_validado=true;
     }else{
         $password_validado=false;
-        $password['password']="El password esta vacio";
+        $errores['password']="El password esta vacio";
     }
-    if(){
-        
+    $guardar_usuario = false;
+    if(count($errores)==0){
+        $guardar_usuario = true;
+        //Insertar usuario en la tabla usuario
+
+    }else{
+        $_SESSION['errores'] = $errores;
+        header('Location: index.php');
     }
 }
