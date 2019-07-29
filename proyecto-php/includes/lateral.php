@@ -15,12 +15,12 @@
     </div>
 
     <div id="register" class="bloque">
-        <?php /*if(isset($_SESSION['errores'])): */?>
-            <?php /*var_dump($_SESSION['errores']); */?>
-        <?php /*endif; */?>
+        <?php if(isset($_SESSION['errores'])): ?>
+            <?php var_dump($_SESSION['errores']); ?>
+        <?php endif; ?>
         <h3>Registrate</h3>
         <!--Mostrar errores-->
-        <?php if(isset($_SESSION['completado'])): ?>
+        <?php /*if(isset($_SESSION['completado'])): ?>
             <div class="alerta alerta-exito">
                 <?=$_SESSION['completado']?>
             </div>
@@ -28,26 +28,26 @@
             <div class="alerta alerta-error">
                 <?=$_SESSION['errores']['general']?>
             </div>
-        <?php endif; ?>
+        <?php endif; */?>
             <form action="registro.php" method="POST">
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre"/>
-                <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'nombre') : '';?>
+                <?php /*echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'nombre') : '';*/?>
                         
                 <label for="apellidos">Apellidos</label>
                 <input type="text" name="apellidos"/>
-                <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'apellidos') : '';?>
+                <?php /*echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'apellidos') : '';*/?>
 
                 <label for="email">Email</label>
                 <input type="email" name="email"/>
-                <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'email') : '';?>
+                <?php /*echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'email') : '';*/?>
 
                 <label for="password">Contraseña</label>
                 <input type="password" name="password"/>
-                <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'password') : '';?>
+                <?php /*echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'password') : '';*/?>
 
                 <input type="submit" name="submit" value="Registrar" />
             </form>
-            <?php borrarErrores();?>
+            <?php /*borrarErrores();*/?>
     </div>
 </aside>

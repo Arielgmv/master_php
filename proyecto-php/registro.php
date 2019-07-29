@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['submit'])){
     /*if(isset($_POST['nombre'])){
         $nombre=$_POST['nombre'];
@@ -50,6 +51,8 @@ if(isset($_POST['submit'])){
         $guardar_usuario=true;
         //Insertar usuario en la tabla usuarios de la BBD
     }else {
-        # code...
+        $_SESSION['errores']=$errores;
+        //Redirigir al index.php ** Yo tengo en la sesion todos los errores
+        header('Location: index.php');
     }
 }
