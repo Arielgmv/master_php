@@ -1,9 +1,13 @@
 <?php
+//Librería con las funciones PHP
+//le estoy pasando el array de errores y le paso el campo (yo le estoy pasando - string)
 function mostrarError($errores, $campo){
+    //por defecto alerta irá vacia
     $alerta='';
     if(isset($errores[$campo]) && !empty($campo)){
         $alerta="<div class='alerta alerta-error'>".$errores[$campo].'</div>';
     }
+    //en caso de que haya un error
     return $alerta;
 }
 
