@@ -20,7 +20,7 @@
         <?php endif; */?>
         <h3>Registrate</h3>
         <!--Mostrar errores-->
-        <?php /*if(isset($_SESSION['completado'])): ?>
+        <?php if(isset($_SESSION['completado'])): ?>
             <div class="alerta alerta-exito">
                 <?=$_SESSION['completado']?>
             </div>
@@ -28,7 +28,7 @@
             <div class="alerta alerta-error">
                 <?=$_SESSION['errores']['general']?>
             </div>
-        <?php endif; */?>
+        <?php endif; ?>
             <form action="registro.php" method="POST">
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre"/>
