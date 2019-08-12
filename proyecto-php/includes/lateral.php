@@ -4,7 +4,11 @@
     <?php if(isset($_SESSION['usuario'])): ?>
         <div id="usuario-logueado" class="bloque">
             <h3>Bienvenido, <?=$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos']; ?></h3>
-            <?php var_dump($_SESSION['usuario']);?>
+            <?php //var_dump($_SESSION['usuario']);?>
+            <!--Botones-->
+            <a href="cerrar.php" class="boton boton-verde">Crear Entradas</a>
+            <a href="cerrar.php" class="boton boton-naranja">Mis Datos</a>
+            <a href="cerrar.php" class="boton">Cerrar Sesión</a>
         </div>
     <?php endif; ?>
     <div id="login" class="bloque">
