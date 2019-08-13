@@ -162,6 +162,11 @@ input[type="submit"],
     background: #21e621;
     border-color: green;
 }
+
+.boton-rojo{
+    background: red;
+    border-color: rgb(189, 1, 1);
+}
 /*Principal*/
 #principal{
     float: left;

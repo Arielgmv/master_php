@@ -29,3 +29,16 @@ function borrarErrores(){
     
     return $borrado;
 }
+
+function conseguirCategorias($conexion){
+    $sql="SELECT * FROM categorias ORDER BY id ASC;";
+    $categorias=mysqli_query($conexion, $sql);
+    //$result=false;
+    //en vez de false coloco un array vacio
+    $result=array();
+    if ($categorias && mysqli_num_rows($categorias)>=1) {
+        $result=$categorias;
+    }
+    //puede ser array vacio o el array de categorias
+    return $result;    
+}
