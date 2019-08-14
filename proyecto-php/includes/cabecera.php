@@ -24,12 +24,17 @@
                     </li>
                     <?php
                         $categorias=conseguirCategorias($db);
-                        while($categoria=mysqli_fetch_assoc($categorias)):
+                        //para comprobar que no esta vacio el array (if)
+                        if(!empty($categorias)):
+                            while($categoria=mysqli_fetch_assoc($categorias)):
                     ?>
-                        <li>
-                            <a href="categoria.php?id=<?=$categoria['id']?>"><?=$categoria['nombre']?></a>
-                        </li>                    
-                    <?php endwhile; ?>
+                            <li>
+                                <a href="categoria.php?id=<?=$categoria['id']?>"><?=$categoria['nombre']?></a>
+                            </li>                    
+                    <?php
+                            endwhile;
+                        endif;                        
+                    ?>
                     <li>
                         <a href="index.php">Sobre Nosotros</a>
                     </li>

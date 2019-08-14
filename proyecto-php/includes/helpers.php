@@ -32,6 +32,7 @@ function borrarErrores(){
 
 function conseguirCategorias($conexion){
     $sql="SELECT * FROM categorias ORDER BY id ASC;";
+    //ejecutamos la consulta
     $categorias=mysqli_query($conexion, $sql);
     //$result=false;
     //en vez de false coloco un array vacio
@@ -39,6 +40,17 @@ function conseguirCategorias($conexion){
     if ($categorias && mysqli_num_rows($categorias)>=1) {
         $result=$categorias;
     }
-    //puede ser array vacio o el array de categorias
+    //puede devolver un array vacio o el array de categorias
     return $result;    
+}
+
+function conseguirUltimasEntradas($conexion){
+    $sql="SELECT e.*, c.* FROM entradas e INNER JOIN categorias c ON e.categoria_id = c.id ORDER BY e.id DESC limit 4";
+    //ejecutamos la consulta
+    $entradas=mysqli_query($conexion, $sql);
+    $result=array();
+    if ($entradas && mysqli_num_rows($entradas)>=1){
+        $result=$entradas;
+    }
+    return $result;
 }
