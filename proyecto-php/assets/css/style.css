@@ -36,6 +36,12 @@ body{
     border-radius: 2px;
 }
 
+.fecha{
+    color: #6a6868;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
 /*Cabecera*/
 #cabecera{
     width: 85%;
