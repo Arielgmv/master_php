@@ -7,7 +7,7 @@
             <?php //var_dump($_SESSION['usuario']);?>
             <!--Botones-->
             <a href="cerrar.php" class="boton boton-verde">Crear Entradas</a>
-            <a href="cerrar.php" class="boton">Crear Categoria</a>
+            <a href="crear-categoria.php" class="boton">Crear Categoria</a>
             <a href="cerrar.php" class="boton boton-naranja">Mis Datos</a>
             <a href="cerrar.php" class="boton boton-rojo">Cerrar Sesión</a>
         </div>
