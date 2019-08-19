@@ -1,7 +1,8 @@
 <?php
-//poo en php
-//definir una clase, molde para crear más objetos de tipo coche
-//con características parecidas
+//constructor primer metodo que se ejecuta al crear el objeto
+//se llama automaticamente al crearlo
+//constructor no devuelve datos, se encarga de setear informacion en las 
+//propiedades
 class Coche{
     //atributos o propiedades (variables)
     public $color='Rojo';
@@ -32,25 +33,5 @@ class Coche{
     public function getVelocidad(){
         return $this->velocidad;
     }
-}//fin definicion de la clase
-//crear un objeto o instaciar la clase
-$coche=new Coche();
-//var_dump($coche);
-//usar los metodos
-echo $coche->getVelocidad().'<br/>';
-$coche->setColor('Negro');
-echo 'El color del coche es: '.$coche->getColor().'<br/>';
-$coche->acelerar();
-$coche->acelerar();
-$coche->acelerar();
-$coche->acelerar();
-echo $coche->getVelocidad().'<br/>';
-$coche->frenar();
-echo 'La velocidad del coche es: '.$coche->getVelocidad().'<br/>';
-
-$coche2=new Coche();
-$coche2->setColor('verde');
-$coche2->setModelo('Gallardo');
-var_dump($coche).'<br/>';
-var_dump($coche2);
+}
 ?>
