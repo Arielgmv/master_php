@@ -1,37 +1,16 @@
 <?php
-//constructor primer metodo que se ejecuta al crear el objeto
-//se llama automaticamente al crearlo
-//constructor no devuelve datos, se encarga de setear informacion en las 
-//propiedades
-class Coche{
-    //atributos o propiedades (variables)
-    public $color='Rojo';
-    public $marca='Ferrari';
-    public $modelo='Aventador';
-    public $velocidad=300;
-    public $caballaje=500;
-    public $plazas=2;
-
-    //Métodos (funciones), acciones que hace el objeto
-    public function getColor(){
-        //con el operador this accedemos a los atributos de la clase
-        //busca en esta clase la propiedad X
-        return $this->color;
-    }
-    public function setColor($color){
-        $this->color=$color;
-    }
-    public function setModelo($modelo){
-        $this->modelo=$modelo;
-    }
-    public function acelerar(){
-        $this->velocidad++;
-    }
-    public function frenar(){
-        $this->velocidad--;
-    }
-    public function getVelocidad(){
-        return $this->velocidad;
-    }
-}
+require_once 'coche.php';
+//instacio, creo el objeto coche
+$coche=new Coche('Amarillo', 'Renault', 'Clio', 150, 200, 5);
+$coche1=new Coche('Negro', 'Toyota', 'Rav4', 190, 2400, 5);
+$coche2=new Coche('Azul', 'Ford', 'Fiesta', 180, 1500, 5);
+//como esta public puedo modificar desde fuera (no recomendable)
+//$coche->color='plomo';
+//var_dump($coche);
+//var_dump($coche1);
+//var_dump($coche2);
+$coche->color='plomo';
+$coche->setMarca('Audi');
+//var_dump($coche);
+//var_dump($coche->modelo);
 ?>
