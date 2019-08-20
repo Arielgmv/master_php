@@ -2,9 +2,7 @@
 if (isset($_POST)) {
     //Conexion a la base de datos
     require_once 'includes/conexion.php';
-    if (condition) {
-        $nombre=isset($_POST['nombre']) ? mysqli_real_escape_string($db, $_POST['nombre']):false;
-    }
+    $nombre=isset($_POST['nombre']) ? mysqli_real_escape_string($db, $_POST['nombre']):false;
 
     //Array de errores
     $errores=array();
