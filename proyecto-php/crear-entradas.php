@@ -11,10 +11,29 @@
     </p>
     <br/>
     <form action='guardar-entrada.php' method='POST'>
-        <label for="nombre">Nombre de la categoria</label>
-        <input type="text" name="nombre" />
+        <label for="titulo">Titulo:</label>
+        <input type="text" name="titulo"/>
+        
+        <label for="descripcion">Descripcion:</label>
+        <textarea name="descripcion"></textarea>>
 
-        <input type="submit" value="Guardar" />
+        <label for="categoria">Categoria</label>
+        <select>
+            <?php
+                $categorias=conseguirCategorias($db);
+                if(!empty($categorias)):
+                while ($categoria=mysqli_fetch_assoc($categorias)):
+            ?>
+                <option value="<?=$categoria['id']?>">
+                    <?=$categoria['nombre']?>
+                </option>
+            <?php
+                endwhile;
+                endif;
+            ?>
+        </select>
+        
+        <input type="submit" value="Guardar"/>
     </form>
 </div>
 
