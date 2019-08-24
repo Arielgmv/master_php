@@ -18,7 +18,7 @@
         <textarea name="descripcion"></textarea>>
 
         <label for="categoria">Categoria</label>
-        <select>
+        <select name="categoria">
             <?php
                 $categorias=conseguirCategorias($db);
                 if(!empty($categorias)):
