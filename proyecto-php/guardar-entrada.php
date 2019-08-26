@@ -28,9 +28,10 @@
         if (count($errores)==0) {
             $sql="INSERT INTO entradas VALUES (NULL, $usuario, '$categoria', '$titulo', '$descripcion', CURDATE())";
             $guardar=mysqli_query($db, $sql);
+            header('Location: index.php');
         }else {
             $_SESSION['errores_entrada']=$errores;
+            header('Location: crear-entradas.php');
         }
-    }
-    header('Location: index.php');
+    }    
 ?>
