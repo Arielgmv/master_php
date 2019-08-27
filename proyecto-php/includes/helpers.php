@@ -62,3 +62,14 @@ function conseguirUltimasEntradas($conexion){
     }
     return $result;
 }
+
+function conseguirEntradas($conexion){
+    $sql="SELECT e.*, c.nombre AS 'categoria' FROM entradas e INNER JOIN categorias c ON e.categoria_id = c.id ORDER BY e.id DESC";
+    //ejecutamos la consulta
+    $entradas=mysqli_query($conexion, $sql);
+    $result=array();
+    if ($entradas && mysqli_num_rows($entradas)>=1){
+        $result=$entradas;
+    }
+    return $result;
+}
