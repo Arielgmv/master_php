@@ -19,17 +19,20 @@ function borrarErrores(){
     
     if(isset($_SESSION['errores'])){
         $_SESSION['errores']=null;
-        $borrado=session_unset($_SESSION['errores']);
+        $borrado=true;
+        //$borrado=session_unset($_SESSION['errores']);
     }
 
     if(isset($_SESSION['errores_entrada'])){
         //sólo doy un valor nulo a esa sesión para que no me muestre los errores
-        $_SESSION['errores_entrada']=null;        
+        $_SESSION['errores_entrada']=null;
+        $borrado=true;      
     }
     
     if(isset($_SESSION['completado'])){
         $_SESSION['completado']=null;
-        $borrado=session_unset($_SESSION['completado']);
+        $borrado=true;
+        //$borrado=session_unset($_SESSION['completado']);
     }
     
     return $borrado;

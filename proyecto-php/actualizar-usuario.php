@@ -40,21 +40,31 @@ if(isset($_POST['submit'])){
         $errores['email']="El email no es valido";
     }
     $guardar_usuario=false;
+    $usuario=$_SESSION['usuario'];
     if(count($errores)==0){
         $guardar_usuario=true;
-        //Actualizar el usuario en la tabla usuarios de la BBD
-        $usuario=$_SESSION['usuario'];
-        $sql="UPDATE usuarios SET nombre='$nombre', apellidos='$apellidos', email='$email' WHERE id= ".$usuario['id'];
-        $guardar=mysqli_query($db, $sql);
-        if($guardar){
-            $_SESSION['usuario']['nombre']=$nombre;
-            $_SESSION['usuario']['apellido']=$apellidos;
-            $_SESSION['usuario']['email']=$email;
-            //creamos una variable de sesion completado
-            $_SESSION['completado']='Tus datos se han actualizado con exito';
-        }else{
-            //si no, que me anhada en el array de errores, un indice que sea general 
-            $_SESSION['errores']['general']='Fallo al actualizar tus datos';
+        //comprobar si el email ya existe
+        $sql="SELECT id, email FROM usuarios WHERE email='$email'";
+        $isset_email=mysqli_query($db, $sql);
+        $isset_user=mysqli_fetch_assoc($isset_email);
+
+        if($isset_user['id']==$usuario['id']|| empty($isset_user)){
+            //Actualizar el usuario en la tabla usuarios de la BBD
+            
+            $sql="UPDATE usuarios SET nombre='$nombre', apellidos='$apellidos', email='$email' WHERE id= ".$usuario['id'];
+            $guardar=mysqli_query($db, $sql);
+            if($guardar){
+                $_SESSION['usuario']['nombre']=$nombre;
+                $_SESSION['usuario']['apellido']=$apellidos;
+                $_SESSION['usuario']['email']=$email;
+                //creamos una variable de sesion completado
+                $_SESSION['completado']='Tus datos se han actualizado con exito';
+            }else{
+                //si no, que me anhada en el array de errores, un indice que sea general 
+                $_SESSION['errores']['general']='Fallo al actualizar tus datos';
+            }
+        }else {
+            $_SESSION['errores']['general']='El usuario ya existe';
         }
     }else {
         $_SESSION['errores']=$errores;        
