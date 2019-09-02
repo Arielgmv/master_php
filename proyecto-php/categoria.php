@@ -1,11 +1,25 @@
+<?php require_once 'includes/conexion.php'; ?>
+<?php require_once 'includes/helpers.php'; ?>
+<?php
+    $categoria_actual=conseguirCategoria($db, $_GET['id']);
+    //var_dump($categoria);
+    //die();
+    if (!isset($categoria_actual['id'])) {
+        header("Location: index.php");
+    }
+?>
 <?php require_once 'includes/cabecera.php'; ?>
 <?php require_once 'includes/lateral.php'; ?>
 
 <!--Caja Principal-->
 <div id="principal">
-    <h1>Todas las entradas</h1>
     <?php
-        $entradas=conseguirEntradas($db);
+    //var_dump($categoria_actual);
+    //die();
+    ?>
+    <h1>Entradas de <?=$categoria_actual['nombre']?></h1>
+    <?php
+        $entradas=conseguirEntradas($db, $_GET['id']);
         //var_dump($entradas);
         if(!empty($entradas)):
             while($entrada=mysqli_fetch_assoc($entradas)):
@@ -20,8 +34,10 @@
                 </article>    
     <?php            
             endwhile;
-        endif;
+        else:
     ?>
+    <div class="alerta">No hay entradas en esta categoria</div>
+    <?php endif; ?>
 </div>
 <!--Fin Principal-->
 

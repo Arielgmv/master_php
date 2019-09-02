@@ -52,6 +52,20 @@ function conseguirCategorias($conexion){
     return $result;    
 }
 
+function conseguirCategoria($conexion, $id){
+    $sql="SELECT * FROM categorias WHERE id=$id;";
+    //ejecutamos la consulta
+    $categorias=mysqli_query($conexion, $sql);
+    //$result=false;
+    //en vez de false coloco un array vacio
+    $result=array();
+    if ($categorias && mysqli_num_rows($categorias)>=1) {
+        $result=mysqli_fetch_assoc($categorias);
+    }
+    //puede devolver un array vacio o el array de categorias
+    return $result;    
+}
+
 function conseguirUltimasEntradas($conexion){
     $sql="SELECT e.*, c.nombre AS 'categoria' FROM entradas e INNER JOIN categorias c ON e.categoria_id = c.id ORDER BY e.id DESC limit 4";
     //ejecutamos la consulta
@@ -63,8 +77,15 @@ function conseguirUltimasEntradas($conexion){
     return $result;
 }
 
-function conseguirEntradas($conexion){
-    $sql="SELECT e.*, c.nombre AS 'categoria' FROM entradas e INNER JOIN categorias c ON e.categoria_id = c.id ORDER BY e.id DESC";
+function conseguirEntradas($conexion, $categoria=null){
+    $sql="SELECT e.*, c.nombre AS 'categoria' FROM entradas e INNER JOIN categorias c ON e.categoria_id = c.id ";
+    if (!empty($categoria)) {
+        $sql.="WHERE e.categoria_id=$categoria ";
+    }
+    $sql.="ORDER BY e.id DESC";
+    
+    //echo $sql;
+    //die();
     //ejecutamos la consulta
     $entradas=mysqli_query($conexion, $sql);
     $result=array();
