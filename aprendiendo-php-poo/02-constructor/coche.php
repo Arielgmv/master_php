@@ -5,7 +5,7 @@
 //propiedades
 class Coche{
     //atributos o propiedades (variables)
-    //public: Podemos acceder a el dese cualquier lugar
+    //public: Podemos acceder a el desde cualquier lugar
     //dentro de la clase actual
     //dentro de clases que hereden esta clase o fuera de la clase
     public $color;
