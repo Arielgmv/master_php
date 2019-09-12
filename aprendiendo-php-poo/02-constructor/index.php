@@ -9,8 +9,12 @@ $coche2=new Coche('Azul', 'Ford', 'Fiesta', 180, 1500, 5);
 //var_dump($coche);
 //var_dump($coche1);
 //var_dump($coche2);
-$coche->color='plomo';
+$coche->color='azul';
+//$coche->marca='Niva';
+//para modificar $marca, no se puede acceder directamente como arriba
+//hay que utilizar el método setMarca
 $coche->setMarca('Audi');
-//var_dump($coche);
 //var_dump($coche->modelo);
+var_dump($coche->getModelo());
+//var_dump($coche);
 ?>

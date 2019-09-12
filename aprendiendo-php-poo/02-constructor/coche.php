@@ -5,6 +5,7 @@
 //propiedades
 class Coche{
     //atributos o propiedades (variables)
+    
     //public: Podemos acceder a el desde cualquier lugar
     //dentro de la clase actual
     //dentro de clases que hereden esta clase o fuera de la clase
@@ -47,6 +48,11 @@ class Coche{
     public function setModelo($modelo){
         $this->modelo=$modelo;
     }
+
+    public function getModelo(){
+        return $this->modelo;
+    }
+
     public function acelerar(){
         $this->velocidad++;
     }

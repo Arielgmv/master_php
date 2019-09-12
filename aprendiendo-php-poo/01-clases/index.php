@@ -14,7 +14,7 @@ class Coche{
     //Métodos (funciones), acciones que hace el objeto
     public function getColor(){
         //con el operador this accedemos a los atributos de la clase
-        //busca en esta clase la propiedad X
+        //this significa -> busca en esta clase la propiedad X
         return $this->color;
     }
     public function setColor($color){
