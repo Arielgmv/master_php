@@ -15,6 +15,8 @@ $coche->color='azul';
 //hay que utilizar el método setMarca
 $coche->setMarca('Audi');
 //var_dump($coche->modelo);
-var_dump($coche->getModelo());
+//var_dump($coche->getModelo());
 //var_dump($coche);
+echo $coche->mostrarInformacion($coche1);
+//echo $coche->mostrarInformacion("Hola");
 ?>
