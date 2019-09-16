@@ -42,6 +42,12 @@ class Informatico extends Persona{
     public $lenguajes;
     public $experienciaProgramador;
 
+    public function __construct(){
+        $this->lenguajes = "HTML, CSS y JS";
+        $this->experienciaProgramador = 10;
+    }
+    
+    
     public function sabeLenguajes($lenguajes){
         $this->lenguajes = $lenguajes;
         return $this->lenguajes;
@@ -61,6 +67,14 @@ class Informatico extends Persona{
 class TecnicoRedes extends Informatico{
     public $auditarRedes;
     public $experienciaRedes;
+    
+    public function __construct(){
+        //con parent accede a los atributos de la clase padre para que herede
+        parent::__construct();
+        $this->auditarRedes = 'experto';
+        $this->experienciaRedes = 5;
+    }
+
     public function auditoria(){
         return "Estoy auditando una red";
     }
