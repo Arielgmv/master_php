@@ -29,10 +29,19 @@ class Principal{
 //Objeto principal
 $principal = new Principal();
 echo('<pre>');
-var_dump($principal->usuario);
+//var_dump($principal->usuario);
+var_dump(get_class_methods($principal));
 echo('</pre>');
 
 $usuario = new UsuarioAdmin();
 echo('<pre>');
 var_dump($usuario);
 echo('</pre>');
+
+//comprobar si existe una clase
+$clase = class_exists('Misclases\Usuario');
+if ($clase) {
+    echo '<h1>La clase si existe</h1>';
+}else {
+    echo '<h1>La clase no si existe</h1>';
+}
