@@ -42,4 +42,5 @@ if (class_exists($nombre_controlador)) {
 //http://127.0.0.1/master_php/aprendiendo-php-mvc/?=UsuarioController&action=mostrarTodos
 
 //http://127.0.0.1/master_php/aprendiendo-php-mvc/?controller=Usuario&action=crear
+//http://127.0.0.1/master_php/aprendiendo-php-mvc/?controller=Nota&action=listar
 
