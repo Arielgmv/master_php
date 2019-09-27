@@ -8,8 +8,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once 'controllers/UsuarioController.php';
-require_once 'controllers/NotaController.php';
+require_once 'autoload.php';
 
 if (isset($_GET['controller'])) {
     $nombre_controlador = $_GET['controller'].'Controller';
@@ -25,9 +24,11 @@ if (class_exists($nombre_controlador)) {
 
     //$controlador->MostrarTodos();
     //$controlador->crear();
+    //$_GET['action'] es variable
     if (isset($_GET['action']) && method_exists($controlador, $_GET['action'])) {
         //se llama con http://127.0.0.1/master_php/aprendiendo-php-mvc/?action=MostrarTodos
         //http://127.0.0.1/master_php/aprendiendo-php-mvc/?action=crear
+        //haciendo lo siguiente invoca el metodo que tenemos en nuestra clase
         $action = $_GET['action'];
         $controlador->$action();
     }else {

@@ -4,6 +4,11 @@ class Nota extends ModeloBase{
     public $nombre;
     public $contenido;
 
+    //con esto tengo acceso a la propiedad db
+    public function __construct(){
+        parent::__construct();
+    }
+
     public function setNombre($nombre){
         $this->nombre=$nombre;
     }
@@ -15,8 +20,5 @@ class Nota extends ModeloBase{
     }
     public function getContenido(){
         return $this->contenido;
-    }
-    public function conseguirTodos(){
-        return "Sacando todos los usuarios";
     }
 }
