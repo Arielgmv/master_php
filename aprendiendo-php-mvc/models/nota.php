@@ -1,24 +1,36 @@
 <?php
 require_once 'ModeloBase.php';
 class Nota extends ModeloBase{
-    public $nombre;
-    public $contenido;
+    public $usuario_id;
+    public $titulo;
+    public $descripcion;
 
     //con esto tengo acceso a la propiedad db
     public function __construct(){
         parent::__construct();
     }
 
-    public function setNombre($nombre){
-        $this->nombre=$nombre;
+    public function setUsuario_id($usuario_id){
+        $this->usuario_id=$usuario_id;
     }
-    public function setContenido($contenido){
-        $this->contenido=$contenido;
+    public function getUsuario_id(){
+        return $this->usuario_id;
     }
-    public function getNombre(){
-        return $this->nombre;
+    public function setTitulo($titulo){
+        $this->titulo=$titulo;
     }
-    public function getContenido(){
-        return $this->contenido;
+    public function getTitulo(){
+        return $this->titulo;
+    }
+    public function setDescripcion($descripcion){
+        $this->descripcion=$descripcion;
+    }
+    public function getDescripcion(){
+        return $this->descripcion;
+    }
+    public function guardar(){
+        $sql = "INSERT INTO notas(usuario_id, titulo, descripcion) VALUES ({$this->usuario_id}, '{$this->titulo}', '{$this->descripcion}', CURDATE())";
+        $guardado = $this->db->query($sql);
+        return $guardado;
     }
 }
