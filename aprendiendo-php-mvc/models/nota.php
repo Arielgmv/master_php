@@ -29,7 +29,7 @@ class Nota extends ModeloBase{
         return $this->descripcion;
     }
     public function guardar(){
-        $sql = "INSERT INTO notas(usuario_id, titulo, descripcion) VALUES ({$this->usuario_id}, '{$this->titulo}', '{$this->descripcion}', CURDATE())";
+        $sql = "INSERT INTO notas(usuario_id, titulo, descripcion, fecha) VALUES ({$this->usuario_id}, '{$this->titulo}', '{$this->descripcion}', CURDATE())";
         $guardado = $this->db->query($sql);
         return $guardado;
     }
