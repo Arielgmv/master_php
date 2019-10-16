@@ -42,12 +42,46 @@
             <!--Barra Lateral-->
             <aside id="lateral">
                 <div id="login" class="block_aside">
-                    
+                    <form action="#" method="post">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" />
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" />
+                    </form>
+
+                    <a href="#">Mis pedidos</a>
+                    <a href="#">Gestionar pedidos</a>
+                    <a href="#">Gestionar categorias</a>
                 </div>
             </aside>    
             
             <!--Contenido Central-->
+            <div id="central">
+                <div class="product">
+                    <img src="assets/img/camiseta.png" />
+                    <h2>Camiseta Azul Ancha</h2>
+                    <p>30 euros</p>
+                    <a href="">Comprar</a>
+                </div>
+
+                <div class="product">
+                    <img src="assets/img/camiseta.png" />
+                    <h2>Camiseta Azul Ancha</h2>
+                    <p>30 euros</p>
+                    <a href="">Comprar</a>
+                </div>
+
+                <div class="product">
+                    <img src="assets/img/camiseta.png" />
+                    <h2>Camiseta Azul Ancha</h2>
+                    <p>30 euros</p>
+                    <a href="">Comprar</a>
+                </div>
+            </div>
         </div>
         <!--Pie de página-->
+        <footer id="footer">
+            <p>Desarrollado por Ariel Muñoz &copy; <?=date('Y')?></p>
+        </footer>
     </body>
 </html>
