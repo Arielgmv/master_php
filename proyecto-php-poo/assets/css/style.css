@@ -1,5 +1,42 @@
+/*Generales*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background: url(../img/bg.png);
+}
+
+a{
+    color: #01b1ea;
+}
+
+a:visited{
+    color: #01b1ea;
+}
+
+a:hover{
+    color: #555555;
+}
+
+/*Container*/
+#container{
+    width: 80%;
+    margin: 0px auto;
+    box-shadow: 0px 0px 10px gray;
+    background: white;
+}
+
+/*Header*/
+#header{    
+    height: 145px;
+    background: #f0f0f0; 
+}
+
 #logo img{
-    width: 150px;
+    height: 100px;
 }
 
 .product img{
