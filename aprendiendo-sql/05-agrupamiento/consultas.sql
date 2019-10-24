@@ -13,8 +13,8 @@ SUM     Sumar todo el contenido del grupo
 */
 SELECT AVG(id) AS 'Media de Entradas' FROM entradas;
 
-SELECT MAX(id) AS 'Máximo id', titulo FROM entradas;
+SELECT MAX(id) AS 'Máximo id', titulo FROM entradas GROUP BY id;
 
-SELECT MIN(id) AS 'Mínimo id', titulo FROM entradas;
+SELECT MIN(id) AS 'Mínimo id', titulo FROM entradas GROUP BY id;
 
 SELECT SUM(id) AS 'Suma de id', titulo FROM entradas;

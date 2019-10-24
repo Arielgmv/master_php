@@ -11,7 +11,7 @@ WHERE e.usuario_id=u.id AND e.categoria_id=c.id;
 /*Inner Join*/
 SELECT e.id, e.titulo, u.nombre AS 'Autor'
 FROM entradas e
-INNER JOIN usuarios u ON e.usuario_id=u.id;
+INNER JOIN usuarios u ON e.usuario_id=u.id
 INNER JOIN categorias c ON e.categoria_id=c.id;
 
 /*Mostrar el nombre de las categorías y al lado cuantas entradas tienen*/
