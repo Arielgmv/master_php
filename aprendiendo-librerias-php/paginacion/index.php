@@ -1,13 +1,18 @@
 <?php
-require_once '../vendor/autoload.php';
+require "../vendor/autoload.php";
+
+//mostrar errores en PHP: https://stackify.com/display-php-errors/
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 //Conexion BBDD
 $conexion = new mysqli("localhost", "root", "12345678", "notas_master");
 $conexion->query("SET NAMES 'utf8'");
 
-//Consulta a paginar
-$consulta = $conexion->query("SELECT * FROM notas");
-$numero_elementos = $consulta->num_rows;
+//Consulta para contar elementos totales
+$consulta = $conexion->query("SELECT COUNT(id) as 'total' FROM notas");
+$numero_elementos = $consulta->fetch_object()->total;
 $numero_elementos_pagina = 2;
 
 //var_dump($numero_elementos);
@@ -22,4 +27,19 @@ $pagination = records($numero_elementos);
 $pagination->records_per_page($numero_elementos_pagina);
 
 $page = $pagination->get_page();
-$notas = $conexion->query("SELECT * FROM notas LIMIT (($page -1)*$numero_elementos_pagina), $numero_elementos_pagina");
+
+$empieza_aqui = (($page -1)*$numero_elementos_pagina);
+$sql = "SELECT * FROM notas LIMIT $empieza_aqui,$numero_elementos_pagina";
+$notas = $conexion->query($sql);
+
+//echo $sql; 
+//die();
+
+echo '<link rel="stylesheet" href="../vendor/stefangabos/zebra_pagination/public/css/zebra_pagination.css" type="text/css">';
+
+while($nota=$notas->fetch_object()){
+    echo "<h1>{$nota->titulo}</h1>";
+    echo "<h3>{$nota->descripcion}</h3> </hr>";
+}
+
+$pagination->render();
