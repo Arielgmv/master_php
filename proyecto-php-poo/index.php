@@ -49,35 +49,39 @@
                             <input type="email" name="email" />
                             <label for="password">Contraseña</label>
                             <input type="password" name="password" />
+                            <input type="submit" value="Enviar" />
                         </form>
 
-                        <a href="#">Mis pedidos</a>
-                        <a href="#">Gestionar pedidos</a>
-                        <a href="#">Gestionar categorias</a>
+                        <ul>
+                            <li><a href="#">Mis pedidos</a></li>
+                            <li><a href="#">Gestionar pedidos</a></li>
+                            <li><a href="#">Gestionar categorias</a></li>
+                        </ul>
                     </div>
                 </aside>    
                 
                 <!--Contenido Central-->
                 <div id="central">
+                    <h1>Productos destacados</h1>
                     <div class="product">
                         <img src="assets/img/camiseta.png" />
                         <h2>Camiseta Azul Ancha</h2>
                         <p>30 euros</p>
-                        <a href="">Comprar</a>
+                        <a href="" class="button">Comprar</a>
                     </div>
 
                     <div class="product">
                         <img src="assets/img/camiseta.png" />
                         <h2>Camiseta Azul Ancha</h2>
                         <p>30 euros</p>
-                        <a href="">Comprar</a>
+                        <a href="" class="button">Comprar</a>
                     </div>
 
                     <div class="product">
                         <img src="assets/img/camiseta.png" />
                         <h2>Camiseta Azul Ancha</h2>
                         <p>30 euros</p>
-                        <a href="">Comprar</a>
+                        <a href="" class="button">Comprar</a>
                     </div>
                 </div>
             </div>
