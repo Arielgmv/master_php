@@ -1,10 +1,11 @@
 <?php
 //mostrar errores en PHP: https://stackify.com/display-php-errors/
-ini_set('display_errors', 1);
+/*ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(E_ALL);*/
 
 require_once 'autoload.php';
+require_once 'config/parameters.php';
 require_once 'views/layout/header.php';
 require_once 'views/layout/sidebar.php';
 
@@ -13,6 +14,8 @@ if (isset($_GET['controller'])) {
     $nombre_controlador = $_GET['controller'].'Controller';
     //var_dump($nombre_controlador);
 }else {
+    $error = new errorController();    
+    $error->index();
     echo "La pagina que buscas no existe 1";
     exit();
 }
@@ -27,9 +30,13 @@ if (class_exists($nombre_controlador)) {
         $action = $_GET['action'];
         $controlador->$action();
     }else {
+        $error = new errorController();
+        $error->index();
         echo "La pagina que buscas no existe 2";
     }
 }else {
+    $error = new errorController();    
+    $error->index();
     echo "La pagina que buscas no existe 3";
 }
 

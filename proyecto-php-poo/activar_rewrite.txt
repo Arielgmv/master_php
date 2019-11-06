@@ -1,0 +1,4 @@
+activar modulo rewrite en linux:
+https://hostadvice.com/how-to/how-to-enable-apache-mod_rewrite-on-an-ubuntu-18-04-vps-or-dedicated-server/
+https://www.galisteocantero.com/activar-modulo-mod_rewrite-de-apache-en-linux-y-windows/
+
