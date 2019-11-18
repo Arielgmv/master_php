@@ -43,7 +43,8 @@ class usuarioController{
         if (isset($_POST)) {
             //Identificar el usuario
             //Consulta a la BBDD
-
+            $usuario = new Usuario();
+            $usuario->login($_POST['email'], $_POST['password']);
             //Crear una sesion
         }
         header("Location:".base_url);
