@@ -39,4 +39,13 @@ class usuarioController{
         }
         header("Location:".base_url.'Usuario/registro');
     }
+    public function login(){
+        if (isset($_POST)) {
+            //Identificar el usuario
+            //Consulta a la BBDD
+
+            //Crear una sesion
+        }
+        header("Location:".base_url);
+    }
 }
