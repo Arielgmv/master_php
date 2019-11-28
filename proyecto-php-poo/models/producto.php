@@ -95,8 +95,12 @@ class Producto{
     }
 
     public function save(){
-        $sql = "INSERT INTO productos VALUES(NULL, '{$this->getNombre()}', '{$this->getDescripcion()}', '{$this->getPrecio()}', '{$this->getStock()}', null, CURDATE(), null)";
+        $sql = "INSERT INTO productos VALUES(NULL, '{$this->getCategoria_id()}','{$this->getNombre()}', '{$this->getDescripcion()}', {$this->getPrecio()}, {$this->getStock()}, null, CURDATE(), null)";
         $save = $this->db->query($sql);
+
+        /*echo $this->db->error;
+        die();*/
+
         $result = false;
         if ($save) {
             $result = true;
