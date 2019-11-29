@@ -27,8 +27,8 @@
             <td><?=$pro->precio;?></td>
             <td><?=$pro->stock;?></td> 
             <td>
-            <a href="<?=base_url?>Producto/editar?id=<?=$pro->id?>" class="button button-gestion">Editar</a>
-                <a href="<?=base_url?>Producto/eliminar?id=<?=$pro->id?>" class="button button-gestion button-red">Eliminar</a>
+            <a href="<?=base_url?>Producto/editar&id=<?=$pro->id?>" class="button button-gestion">Editar</a>
+                <a href="<?=base_url?>Producto/eliminar&id=<?=$pro->id?>" class="button button-gestion button-red">Eliminar</a>
             </td>        
         </tr>
     <?php endwhile; ?>
