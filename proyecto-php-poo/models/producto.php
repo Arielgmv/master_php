@@ -94,6 +94,11 @@ class Producto{
         return $productos;
     }
 
+    public function getRandom($limit){
+        $productos = $this->db->query("SELECT * FROM productos ORDER BY RAND() LIMIT $limit");
+        return $productos;
+    }
+
     public function getOne(){
         $producto = $this->db->query("SELECT * FROM productos WHERE id = {$this->getId()};");
         return $producto->fetch_object();
@@ -113,6 +118,28 @@ class Producto{
         return $result;
     }
 
+    public function edit(){
+        $sql = "UPDATE productos SET nombre='{$this->getNombre()}', descripcion='{$this->getDescripcion()}', precio={$this->getPrecio()}, stock={$this->getStock()}, categoria_id={$this->getCategoria_id()} ";
+        
+        if($this->getImagen() != null){
+            $sql .= ", imagen='{$this->getImagen()}'";
+        }
+
+        $sql .= " WHERE id={$this->id};";
+        
+        $save = $this->db->query($sql);
+
+        /*echo $this->db->error;
+        die();*/
+
+        $result = false;
+        if ($save) {
+            $result = true;
+        }
+        return $result;
+    }    
+    
+    
     public function delete(){
         $sql = "DELETE FROM productos WHERE id={$this->id}";
         $delete = $this->db->query($sql);
