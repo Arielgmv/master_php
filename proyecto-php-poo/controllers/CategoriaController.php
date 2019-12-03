@@ -14,6 +14,7 @@ class categoriaController{
     public function ver(){
         if(isset($_GET['id'])){
             $id = $_GET['id'];
+<<<<<<< HEAD
             
             //Conseguir categoria
             $categoria = new Categoria();
@@ -24,6 +25,13 @@ class categoriaController{
             $producto = new Producto();
             $producto->setCategoria_id($id);
             $productos = $producto->getAllCategory();
+=======
+            $categoria = new Categoria();
+            $categoria->setId($id);
+            
+            $categoria = $categoria->getOne();
+            var_dump($categoria);
+>>>>>>> f3a0926558a170ea5fb909caa5e739a32afcc4d8
         }
 
         require_once 'views/categoria/ver.php';
