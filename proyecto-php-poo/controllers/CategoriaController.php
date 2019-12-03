@@ -9,6 +9,20 @@ class categoriaController{
         require_once 'views/categoria/index.php';
     }
 
+    public function ver(){
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            $categoria = new Categoria();
+            $categoria->setId($id);
+            
+            $categoria = $categoria->getOne();
+            var_dump($categoria);
+        }
+
+        require_once 'views/categoria/ver.php';
+    }
+    
+    
     public function crear(){
         Utils::isAdmin();
         require_once 'views/categoria/crear.php';
