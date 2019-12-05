@@ -17,9 +17,6 @@
     <strong class="alert_green">El producto no se ha borrado correctamente</strong>
 <?php endif; ?>
 <?php Utils::deleteSession('delete'); ?>
-
-
-
 <table>
     <tr>
         <th>Id</th>

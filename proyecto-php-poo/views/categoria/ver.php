@@ -1,5 +1,4 @@
 <?php if(isset($categoria)): ?>
-<<<<<<< HEAD
     <h1><?=$categoria->nombre?></h1>
     <?php if($productos->num_rows == 0): ?>
         <p>No hay productos para mostrar</p>
@@ -19,9 +18,6 @@
             </div>
         <?php endwhile; ?>
     <?php endif; ?>
-=======
-<h1></h1>
->>>>>>> f3a0926558a170ea5fb909caa5e739a32afcc4d8
 <?php else: ?>
     <h1>La categoria no existe</h1>
 <?php endif; ?>
