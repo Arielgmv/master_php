@@ -6,7 +6,7 @@ class carritoController{
         
         $carrito = $_SESSION['carrito'];
         
-        echo "Controlador Carrito, Acción Index";
+        //echo "Controlador Carrito, Acción Index";
 
         require_once 'views/carrito/index.php';
     } 

@@ -20,7 +20,23 @@
                 <img src="<?=base_url?>assets/img/camiseta.png" class="img_carrito" />
             <?php endif; ?>
         </td>
+        <td>
+            <a href="<?=base_url?>Producto/ver&id=<?=$producto->id?>"> <?=$producto->nombre?></a>
+        </td>
+        <td>
+            <?=$producto->precio?>
+        </td>
+        <td>
+            <?=$elemento['unidades']?>
+        </td>
     </tr>
 
     <?php endforeach; ?>
 </table>
+<br/>
+
+<div class="total-carrito">
+    <?php $stats = Utils::statsCarrito(); ?>
+    <h3>Precio total: <?=$stats['total']?>  Bs.</h3>
+    <a href="<?=base_url?>Pedido/hacer" class="button button-pedido">Hacer pedido</a>
+</div>
