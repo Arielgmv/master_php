@@ -26,7 +26,7 @@ class Pedido{
     }
 
     public function setUsuario_id($usuario_id){
-        $this->usuario_id=$usuario_id;
+        $this->usuario_id = $usuario_id;
     }
 
     public function getUsuario_id(){
@@ -58,7 +58,7 @@ class Pedido{
     }
 
     public function setCoste($coste){
-        $this->coste = $this->db->real_escape_string($coste);
+        $this->coste = $coste;
     }
 
     public function getCoste(){
@@ -66,7 +66,7 @@ class Pedido{
     }
 
     public function setEstado($estado){
-        $this->estado = $this->db->real_escape_string($estado);
+        $this->estado = $estado;
     }
 
     public function getEstado(){
@@ -90,31 +90,17 @@ class Pedido{
     }
 
     public function getAll(){
-        $productos = $this->db->query("SELECT * FROM productos ORDER BY id DESC;");
-        return $productos;
-    }
-
-    public function getAllCategory(){
-        $sql = "SELECT p.*, c.nombre AS 'catnombre' FROM productos p "
-                . "INNER JOIN categorias c ON c.id = p.categoria_id "
-                . "WHERE p.categoria_id = {$this->getCategoria_id()} "
-                . "ORDER BY id DESC";
-        $productos = $this->db->query($sql);
+        $productos = $this->db->query("SELECT * FROM pedidos ORDER BY id DESC;");
         return $productos;
     }
     
-    public function getRandom($limit){
-        $productos = $this->db->query("SELECT * FROM productos ORDER BY RAND() LIMIT $limit");
-        return $productos;
-    }
-
     public function getOne(){
-        $producto = $this->db->query("SELECT * FROM productos WHERE id = {$this->getId()};");
+        $producto = $this->db->query("SELECT * FROM pedidos WHERE id = {$this->getId()};");
         return $producto->fetch_object();
     }
 
     public function save(){
-        $sql = "INSERT INTO productos VALUES(NULL, '{$this->getCategoria_id()}','{$this->getNombre()}', '{$this->getDescripcion()}', {$this->getPrecio()}, {$this->getStock()}, null, CURDATE(), '{$this->getImagen()}')";
+        $sql = "INSERT INTO pedidos VALUES(NULL, '{$this->getUsuario_id()}','{$this->getProvincia()}', '{$this->getLocalidad()}', '{$this->getDireccion()}', {$this->getCoste()}, 'confirm', CURDATE(), CURTIME())";
         $save = $this->db->query($sql);
 
         /*echo $this->db->error;
@@ -122,39 +108,6 @@ class Pedido{
 
         $result = false;
         if ($save) {
-            $result = true;
-        }
-        return $result;
-    }
-
-    public function edit(){
-        $sql = "UPDATE productos SET nombre='{$this->getNombre()}', descripcion='{$this->getDescripcion()}', precio={$this->getPrecio()}, stock={$this->getStock()}, categoria_id={$this->getCategoria_id()} ";
-        
-        if($this->getImagen() != null){
-            $sql .= ", imagen='{$this->getImagen()}'";
-        }
-
-        $sql .= " WHERE id={$this->id};";
-        
-        $save = $this->db->query($sql);
-
-        /*echo $this->db->error;
-        die();*/
-
-        $result = false;
-        if ($save) {
-            $result = true;
-        }
-        return $result;
-    }    
-    
-    
-    public function delete(){
-        $sql = "DELETE FROM productos WHERE id={$this->id}";
-        $delete = $this->db->query($sql);
-
-        $result = false;
-        if ($delete) {
             $result = true;
         }
         return $result;
