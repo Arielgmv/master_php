@@ -6,7 +6,7 @@
     <br/>  
 
     <h3>Direccion para el envio</h3>
-    <form action="<?=base_url.'Pedido/add'?>" method="$_POST">
+    <form action="<?=base_url.'Pedido/add'?>" method="POST">
         <label for="provincia">Provincia</label>
         <input type="text" name="provincia" required/>
 

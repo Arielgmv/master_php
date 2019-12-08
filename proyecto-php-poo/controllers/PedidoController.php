@@ -5,6 +5,12 @@ class pedidoController{
     }
 
     public function add(){
-        var_dump($_POST);
+        if(isset($_SESSION['identity'])){
+            //Guardar datos en BBDD
+            
+        }else {
+            //Redirigir al index
+            header("Location:".base_url);
+        }
     }
 }
