@@ -42,9 +42,15 @@ class pedidoController{
             }else {
                 $_SESSION['pedido'] = "failed";
             }
+
+            header("Location:".base_url.'Pedido/confirmado');
         }else {
             //Redirigir al index
             header("Location:".base_url);
         }
+    }
+
+    public function confirmado(){
+        require_once 'views/pedido/confirmado.php';
     }
 }

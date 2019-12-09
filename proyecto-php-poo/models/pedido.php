@@ -124,10 +124,10 @@ class Pedido{
             $insert = "INSERT INTO lineas_pedidos VALUES(NULL, {$pedido_id}, {$producto->id}, {$elemento['unidades']})";
             $save = $this->db->query($insert);
 
-            var_dump($producto);
+            /*var_dump($producto);
             var_dump($insert);
             echo $this->db->error;
-            die();
+            die();*/
         }
         $result = false;
         if ($save) {
