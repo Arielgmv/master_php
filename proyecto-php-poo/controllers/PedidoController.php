@@ -51,6 +51,7 @@ class pedidoController{
     }
 
     public function confirmado(){
+        
         require_once 'views/pedido/confirmado.php';
     }
 }
