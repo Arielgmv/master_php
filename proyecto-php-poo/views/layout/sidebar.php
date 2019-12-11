@@ -32,11 +32,11 @@
             <?php if(isset($_SESSION['admin'])): ?>
                 <li><a href="<?=base_url?>Categoria/index">Gestionar categorías</a></li>
                 <li><a href="<?=base_url?>Producto/gestion">Gestionar productos</a></li>
-                <li><a href="#">Gestionar pedidos</a></li>
+                <li><a href="<?=base_url?>Pedido/gestion">Gestionar pedidos</a></li>
             <?php endif; ?>
                 
             <?php if(isset($_SESSION['identity'])): ?>
-                <li><a href="#">Mis pedidos</a></li>
+                <li><a href="<?=base_url?>Pedido/mis_pedidos">Mis pedidos</a></li>
                 <li><a href="<?=base_url?>Usuario/logout">Cerrar Sesión</a></li>
             <?php else: ?>
                 <li><a href="<?=base_url?>Usuario/registro">Registrate aquí</a></li>
