@@ -1,10 +1,15 @@
-<h1>Mis Pedidos</h1>
+<?php if(isset($gestion)): ?>
+<h1>Gestionar Pedidos</h1>
+<?php else: ?>
+
+<?php endif; ?>
 
 <table>
     <tr>
         <th>Nº Pedido</th>
         <th>Coste</th>
         <th>Fecha</th>        
+        <th>Estado</th>
     </tr>
     <?php
         while($ped = $pedidos->fetch_object()):       
@@ -19,6 +24,9 @@
         </td>
         <td>
             <?=$ped->fecha?>
+        </td>
+        <td>
+        <?=Utils::showStatus($ped->estado)?>
         </td>
     </tr>
 
