@@ -30,6 +30,8 @@
             </td>
             <td>
                 <?=$elemento['unidades']?>
+                <a href="<?=base_url?>Carrito/up&index=<?=$indice?>" class="button">+</a>                
+                <a href="<?=base_url?>Carrito/up&index=<?=$indice?>" class="button">-</a>
             </td>
             <td>
                 <a href="<?=base_url?>Carrito/delete&index=<?=$indice?>" class="button button-carrito button-red">Quitar producto</a>
