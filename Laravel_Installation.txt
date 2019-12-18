@@ -1,0 +1,22 @@
+Laravel Installation
+Version 5.7
+
+Prerequisites
+sudo apt-get install curl
+sudo apt-get install mcrypt php-json php-cli
+
+Composer
+https://www.digitalocean.com/community/tutorials/como-instalar-y-utilizar-composer-en-ubuntu-18-04-es
+
+cd /var/www/html/master_php
+composer create-project laravel/laravel aprendiendo-laravel "5.7.*"  --prefer-dist
+
+
+cd aprendiendo-laravel (ingresamos a la carpeta de laravel)
+
+damos permiso a la carpeta storage
+chmod -R 777 storage/
+
+probar Laravel
+http://127.0.0.1/master_php/aprendiendo-laravel/public/
+
