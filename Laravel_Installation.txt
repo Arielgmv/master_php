@@ -5,6 +5,9 @@ Prerequisites
 sudo apt-get install curl
 sudo apt-get install mcrypt php-json php-cli
 
+chekear las extensiones en el link:
+https://laravel.com/docs/5.7/installation
+
 Composer
 https://www.digitalocean.com/community/tutorials/como-instalar-y-utilizar-composer-en-ubuntu-18-04-es
 
@@ -19,4 +22,74 @@ chmod -R 777 storage/
 
 probar Laravel
 http://127.0.0.1/master_php/aprendiendo-laravel/public/
+
+**Instalando extensiones de PHP
+Tokenizer, ctype y otros
+
+sudo apt-get install php-common php-mbstring php-xml php-zip php-curl
+
+https://stackoverflow.com/questions/40815984/how-to-install-all-required-php-extensions-for-laravel
+
+Bcmath
+sudo apt install php7.2-bcmath
+
+https://ourcodeworld.com/articles/read/679/how-to-solve-the-requested-php-extension-bcmath-is-missing-from-your-system-when-installing-a-library-via-composer-in-ubuntu-16-04
+
+
+
+
+Para subir a GitHub y que funcione, copie un backup de los .gitignore y permiti todo
+en las siguientes rutas:
+aprendiendo-laravel/
+aprendiendo-laravel/bootstrap/cache/
+
+Para ver modulos habilitados
+php -m
+
+Host Virtual
+https://www.digitalocean.com/community/tutorials/como-configurar-virtual-hosts-de-apache-en-ubuntu-16-04-es
+/etc/apache2/sites-available
+sudo cp 000-default.conf laravel.com.conf
+sudo gedit laravel.com.conf
+*********************************************************************************
+<VirtualHost *:80>
+
+	ServerAdmin ariel.munoz.villegas@gmail.com
+	ServerName aprendiendo-laravel.com.devel
+	ServerAlias www.aprendiendo-laravel.com.devel
+	DocumentRoot /var/www/html/master_php/aprendiendo-laravel/public
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+
+<Directory /var/www/html/master_php/aprendiendo-laravel/public>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Require all granted
+</Directory>
+************************************************************************************
+/etc
+
+sudo gedit host
+*************************************************************************************
+127.0.0.1	localhost
+127.0.1.1	ariel-virtual-machine
+127.0.0.1	aprendiendo-laravel.com.devel
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+**************************************************************************************
+sudo a2ensite laravel.com.conf
+sudo service apache2 restart
+
+http://aprendiendo-laravel.com.devel/
+
+
+
+
 
