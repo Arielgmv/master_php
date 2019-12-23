@@ -89,7 +89,12 @@ sudo service apache2 restart
 
 http://aprendiendo-laravel.com.devel/
 
+Comandos Artisan
+Para ver una lista de las rutas
+php artisan route:list
 
+Crear un controlador
+php artisan make:controller PruebasController
 
 
 
