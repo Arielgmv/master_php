@@ -43,7 +43,7 @@ Route::get('/pelicula/{titulo}/{year?}', function($titulo = 'No hay una pelicula
 Route::get('/listado-peliculas', function(){
     
     $titulo = "Listado de películas";
-    $listado = array('Batman', 'Spiderman', 'Gran Torino');
+    $listado = array('Batman', 'Spiderman', 'Gran Torino', 'Joker');
     
     /*return view('peliculas.listado', array(
         'titulo' => $titulo
