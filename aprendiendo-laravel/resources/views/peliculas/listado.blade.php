@@ -1,3 +1,4 @@
+@include('includes.header')
 <!-- Imprimir por pantalla -->
 <h1>{{$titulo}}</h1>
 <h2>{{$listado[0]}}</h2>
@@ -23,3 +24,25 @@
 @else
     <h1>El titulo no existe</h1>
 @endif
+
+<!--Bucles -->
+@for($i=0; $i<=20; $i++)
+    El número es: {{$i}} <br />
+@endfor
+
+<hr />
+
+<?php $contador = 1 ?>
+@while($contador < 50)
+    @if($contador % 2 == 0)
+        Número par: {{$contador}} <br />
+    @endif
+    <?php $contador++; ?>
+@endwhile
+
+<hr />
+
+@foreach($listado as $pelicula)
+    <p>{{$pelicula}}</p>
+@endforeach
+@include('includes.footer')
