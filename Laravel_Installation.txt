@@ -95,5 +95,7 @@ Crear un controlador
 php artisan make:controller PruebasController
 php artisan make:controller PruebasController --resource (tiene una serie de rutas ya establecidas, tiene los métodos del crud)
 
+Crear un middleware
+php artisan make:middleware TestYear
 
 

@@ -18,10 +18,13 @@ Route::get('/', function () {
 
 Route::get('/peliculas/{pagina?}', 'PeliculaController@index');
 
-Route::get('/detalle', [ 
+Route::get('/detalle/{year?}', [ 
+        'middleware' => 'testyear',
         'uses' => 'PeliculaController@detalle',
         'as' => 'detalle.pelicula'
 ]);
+
+Route::get('/redirigir', 'PeliculaController@redirigir');
 
 Route::resource('usuario', 'UsuarioController');
         

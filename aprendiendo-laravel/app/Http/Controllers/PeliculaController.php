@@ -14,7 +14,13 @@ class PeliculaController extends Controller
         ]);
     }
     
-    public function detalle(){
+    public function detalle($year = null){
         return view('pelicula.detalle');
+    }
+    
+    public function redirigir(){
+        //return redirect()->action('PeliculaController@detalle');
+        //return redirect('/peliculas');
+        return redirect()->route('detalle.pelicula');
     }
 }
