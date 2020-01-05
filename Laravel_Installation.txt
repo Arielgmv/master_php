@@ -98,4 +98,15 @@ php artisan make:controller PruebasController --resource (tiene una serie de rut
 Crear un middleware
 php artisan make:middleware TestYear
 
+Migraciones
+php artisan make:migration create_usuarios_table --table=usuarios
+* se crea en ../database/migrations
 
+**para ejecutar las migraciones
+php artisan migrate
+
+**revertir los cambios de las migraciones
+php artisan migrate:rollback
+
+**borra y vuelve a ejecutar las migraciones
+php artisan migrate:refresh
