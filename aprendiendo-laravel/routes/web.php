@@ -27,11 +27,14 @@ Route::get('/detalle/{year?}', [
 Route::get('/redirigir', 'PeliculaController@redirigir');
 
 Route::get('/formulario', 'PeliculaController@formulario');
-
 Route::post('/recibir', 'PeliculaController@recibir');
-
 Route::resource('usuario', 'UsuarioController');
-        
+
+//Rutas fruta
+Route::group(['prefix'=>'frutas'], function(){
+    Route::get('index', 'FrutaController@index');
+});
+
 /*
 GET: Conseguir datos
 POST: Guardar datos

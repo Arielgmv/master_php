@@ -110,3 +110,9 @@ php artisan migrate:rollback
 
 **borra y vuelve a ejecutar las migraciones
 php artisan migrate:refresh
+
+**seeders (rellenar las tablas)
+php artisan make:seed frutas_seed
+
+**ejecutar seed
+php artisan db:seed --class=frutas_seed
