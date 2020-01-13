@@ -37,12 +37,16 @@ Route::get('/contacto', function () {
     return view('contacto');
 });
 
+//Rutas Categoria
 Route::get('/categoria', 'CategoriaController@listar')->name('lista_categorias');
-
 Route::get('/categoria/crear', 'CategoriaController@crear')->name('crear_categoria');
-
 Route::get('/categoria/{id}', 'CategoriaController@ver')->name('ver_categoria');
-
 Route::get('/categoria/{id}/editar', 'CategoriaController@editar')->name('editar_categoria');
 
 Route::resource('/proveedor', 'ProveedorController');
+
+//Rutas Producto
+Route::get('/producto', 'ProductoController@index')->name('lista_producto');
+Route::get('/producto/create', 'ProductoController@create')->name('crear_producto');
+Route::get('/producto/{id}', 'ProductoController@show')->name('ver_producto');
+Route::get('/producto/{id}/edit', 'ProductoController@edit')->name('editar_producto');

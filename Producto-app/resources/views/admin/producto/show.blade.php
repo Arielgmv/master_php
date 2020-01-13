@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Editar categoria</h1>
-    <h3>{{$id_cat}}</h3>
+    <h1>Ver Producto</h1>
+    <h3>{{$id_prod}}</h3>
 </body>
 </html>

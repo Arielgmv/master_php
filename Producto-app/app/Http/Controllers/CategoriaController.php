@@ -26,7 +26,8 @@ class CategoriaController extends Controller
 
     public function editar($id)
     {
-        return view('admin.categoria.editar');
+        $id_cat = $id;
+        return view('admin.categoria.editar', ['id_cat' => $id]);
     }
     
 }
