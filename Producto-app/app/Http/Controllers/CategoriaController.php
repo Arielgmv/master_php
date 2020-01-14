@@ -16,6 +16,11 @@ class CategoriaController extends Controller
         return view('admin.categoria.crear');
     }
 
+    public function guardar(Request $request)
+    {
+        return $request;
+    }
+    
     public function ver($id)
     {
         $id_cat = $id;
@@ -30,4 +35,13 @@ class CategoriaController extends Controller
         return view('admin.categoria.editar', ['id_cat' => $id]);
     }
     
+    public function modificar(Request $request, $id)
+    {
+        return $request;
+    }
+
+    public function eliminar($id)
+    {
+        return "eliminado";
+    }
 }

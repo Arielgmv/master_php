@@ -40,8 +40,15 @@ Route::get('/contacto', function () {
 //Rutas Categoria
 Route::get('/categoria', 'CategoriaController@listar')->name('lista_categorias');
 Route::get('/categoria/crear', 'CategoriaController@crear')->name('crear_categoria');
+
+Route::post('/categoria', 'CategoriaController@guardar')->name('guardar_categoria');
+
 Route::get('/categoria/{id}', 'CategoriaController@ver')->name('ver_categoria');
 Route::get('/categoria/{id}/editar', 'CategoriaController@editar')->name('editar_categoria');
+
+Route::put('/categoria/{id}', 'CategoriaController@modificar')->name('modificar_categoria');
+
+Route::delete('/categoria/{id}', 'CategoriaController@eliminar')->name('eliminar_categoria');
 
 Route::resource('/proveedor', 'ProveedorController');
 
