@@ -13,7 +13,7 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.proveedor.crear');
     }
 
     /**
@@ -45,7 +45,7 @@ class ProveedorController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('');
     }
 
     /**
@@ -56,7 +56,7 @@ class ProveedorController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -79,6 +79,6 @@ class ProveedorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $id;
     }
 }

@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Lista de Categorias</h1>
-    <a href="{{route('crear_categoria')}}">Nueva Categoria</a>
-    <table border=1>
+@extends('layouts.admin')
+
+@section('titulo', 'Lista de Categorias')
+
+@section('contenedor')
+    
+    <a href="{{route('crear_categoria')}}" class="btn btn-primary">Nueva Categoria</a>
+    <table class="table table-striped table-hover">
         <thead>
             <th>ID</th>
             <th>NOMBRE</th>
@@ -22,16 +18,16 @@
                 <td>muebles</td>
                 <td>muebles de oficina</td>
                 <td>
-                    <a href="{{ route('ver_categoria', 1) }}">ver</a>
-                    <a href="{{ route('editar_categoria', 1) }}">editar</a>
+                    <a href="{{ route('ver_categoria', 1) }}" class="btn btn-outline-success btn-xs">ver</a>
+                    <a href="{{ route('editar_categoria', 1) }}" class="btn btn-warning btn-xs">editar</a>
                     <form action="{{ route('eliminar_categoria', 1) }}" method="post">
                         @csrf
                         @Method('DELETE')
-                        <input type="submit" value="eliminar">
+                        <input type="submit" value="eliminar" class="btn btn-danger btn-xs">
                     </form>
                 </td>
             </tr>
         </tbody>
     </table>
-</body>
-</html>
+
+@endsection

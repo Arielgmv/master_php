@@ -34,7 +34,7 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return ();
     }
 
     /**
@@ -81,6 +81,6 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $id;
     }
 }
