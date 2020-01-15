@@ -55,5 +55,17 @@ Route::resource('/proveedor', 'ProveedorController');
 //Rutas Producto
 Route::get('/producto', 'ProductoController@index')->name('lista_producto');
 Route::get('/producto/create', 'ProductoController@create')->name('crear_producto');
+Route::post('/producto', 'ProductoController@store')->name('guardar_producto');
 Route::get('/producto/{id}', 'ProductoController@show')->name('ver_producto');
 Route::get('/producto/{id}/edit', 'ProductoController@edit')->name('editar_producto');
+Route::put('/producto/{id}', 'ProductoController@update')->name('modificar_producto');
+Route::delete('/producto/{id}', 'ProductoController@destroy')->name('eliminar_producto');
+
+//Rutas Proveedor
+Route::get('/proveedor', 'ProveedorController@index')->name('lista_proveedor');
+Route::get('/proveedor/create', 'ProveedorController@create')->name('crear_proveedor');
+Route::post('/proveedor', 'ProveedorController@store')->name('guardar_proveedor');
+Route::get('/proveedor/{id}', 'ProveedorController@show')->name('ver_proveedor');
+Route::get('/proveedor/{id}/edit', 'ProveedorController@edit')->name('editar_proveedor');
+Route::put('/proveedor/{id}', 'ProveedorController@update')->name('modificar_proveedor');
+Route::delete('/proveedor/{id}', 'ProveedorController@destroy')->name('eliminar_proveedor');

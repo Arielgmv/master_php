@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
-@section('titulo', 'Lista de Productos')
+@section('titulo', 'Lista de Proveedores')
 
 @section('contenedor')
-    <h1>Crear Productos</h1>
+    <h1>Crear Proveedores</h1>
     
-    <form action="{{route('guardar_producto')}}" method="post">
+    <form action="{{route('guardar_proveedor')}}" method="post">
         @csrf
         <label for="n">Nombre</label>
         <input type="text" name="nombre" id="n">

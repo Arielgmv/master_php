@@ -13,7 +13,7 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-        return view('admin.proveedor.crear');
+        return view('admin.proveedor.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ProveedorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.proveedor.create');
     }
 
     /**
@@ -34,7 +34,7 @@ class ProveedorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request; 
     }
 
     /**
@@ -45,7 +45,8 @@ class ProveedorController extends Controller
      */
     public function show($id)
     {
-        return view('');
+        $id_prov = $id;
+        return view('admin.proveedor.show', ['id_prov' => $id]);
     }
 
     /**
@@ -56,7 +57,8 @@ class ProveedorController extends Controller
      */
     public function edit($id)
     {
-        
+        $id_prov = $id;
+        return view('admin.proveedor.edit', ['id_prov' => $id]);
     }
 
     /**
@@ -68,7 +70,7 @@ class ProveedorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $request;
     }
 
     /**
@@ -79,6 +81,6 @@ class ProveedorController extends Controller
      */
     public function destroy($id)
     {
-        return $id;
+        return "eliminado";
     }
 }
