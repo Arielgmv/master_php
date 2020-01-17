@@ -14,4 +14,9 @@ class Categoria extends Model
     public $incrementing = false;
     protected $keyType = 'string';*/
 
+    public function productos()
+    {
+        return $this->hasMany('App\Producto');
+    }
+
 }

@@ -5,6 +5,16 @@
 @section('contenedor')
     <h1>Crear Categorias</h1>
     
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <form action="{{route('guardar_categoria')}}" method="post">
         @csrf
         <label for="n">Nombre</label>
