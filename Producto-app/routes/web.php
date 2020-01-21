@@ -38,17 +38,17 @@ Route::get('/contacto', function () {
 });
 
 //Rutas Categoria
-Route::get('/categoria', 'CategoriaController@listar')->name('lista_categorias');
-Route::get('/categoria/crear', 'CategoriaController@crear')->name('crear_categoria');
+Route::get('/categoria', 'CategoriaController@listar')->name('lista_categorias')->middleware('auth');
+Route::get('/categoria/crear', 'CategoriaController@crear')->name('crear_categoria')->middleware('auth');
 
-Route::post('/categoria', 'CategoriaController@guardar')->name('guardar_categoria');
+Route::post('/categoria', 'CategoriaController@guardar')->name('guardar_categoria')->middleware('auth');
 
-Route::get('/categoria/{id}', 'CategoriaController@ver')->name('ver_categoria');
-Route::get('/categoria/{id}/editar', 'CategoriaController@editar')->name('editar_categoria');
+Route::get('/categoria/{id}', 'CategoriaController@ver')->name('ver_categoria')->middleware('auth');
+Route::get('/categoria/{id}/editar', 'CategoriaController@editar')->name('editar_categoria')->middleware('auth');
 
-Route::put('/categoria/{id}', 'CategoriaController@modificar')->name('modificar_categoria');
+Route::put('/categoria/{id}', 'CategoriaController@modificar')->name('modificar_categoria')->middleware('auth');
 
-Route::delete('/categoria/{id}', 'CategoriaController@eliminar')->name('eliminar_categoria');
+Route::delete('/categoria/{id}', 'CategoriaController@eliminar')->name('eliminar_categoria')->middleware('auth');
 
 Route::resource('/proveedor', 'ProveedorController');
 
@@ -69,3 +69,8 @@ Route::get('/proveedor/{id}', 'ProveedorController@show')->name('ver_proveedor')
 Route::get('/proveedor/{id}/edit', 'ProveedorController@edit')->name('editar_proveedor');
 Route::put('/proveedor/{id}', 'ProveedorController@update')->name('modificar_proveedor');
 Route::delete('/proveedor/{id}', 'ProveedorController@destroy')->name('eliminar_proveedor');
+
+Auth::routes();
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
