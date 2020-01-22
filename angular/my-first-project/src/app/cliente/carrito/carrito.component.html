@@ -1,0 +1,10 @@
+<h1>{{ titulo }}</h1>
+<h3>Estado: {{ (estado)? 'Abierto':'Cerrado'}}</h3>
+<h3>Cantidad de Producto: {{ cant_productos }}</h3>
+<p>{{ categorias }}</p>
+
+<button (click)="cerrar_tienda()">{{ (estado)? 'Cerrar Tienda':'Abrir Tienda'}}</button>
+<hr>
+<select name="" id="" *ngIf="estado">
+    <option value="{{cat}}" *ngFor="let cat of categorias">{{cat}}</option>
+</select>
