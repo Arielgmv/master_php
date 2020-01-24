@@ -8,3 +8,78 @@
 <select name="" id="" *ngIf="estado">
     <option value="{{cat}}" *ngFor="let cat of categorias">{{cat}}</option>
 </select>
+
+<h1>Nuevo Producto</h1>
+<form [formGroup]="productoForm">
+    <label for="n">Ingrese Nombre:</label>
+    <input type="text" formControlName="nombre">
+    <br>
+    <label for="p">Ingrese Precio:</label>
+    <input type="number" step="0.01" formControlName="precio">
+    <br>
+    <label for="can">Ingrese Cantidad:</label>
+    <input type="number" formControlName="cantidad">
+    <br>
+
+    <button (click)="agregar_producto()">Agregar Producto</button>
+</form>
+{{ productoForm.value | json}}
+
+<h1>Lista de Productos</h1>
+<table border=1>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            <th>Cant. Venta</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prod of productos; let i=index">
+            <td>{{ i+1 }}</td>
+            <td>{{ prod.nombre}}</td>
+            <td>{{ prod.precio | currency:"Bs. "}}</td>
+            <td>{{ prod.cantidad}}</td>
+            <td>{{ prod.cantidad*prod.precio | currency:"Bs. "}}</td>
+            <td><input type="number" [value]="cant_venta" (change)="cambio($event)"></td>
+            <td>
+                <button (click)="eliminar_producto(i)">X</button>
+                <button (click)="agregar_carrito(prod)">Agregar Carrito</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<h1>Carrito</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Cantidad</td>
+            <td>Precio</td>
+            <td>Subtotal</td>
+            <td>Acciones</td>
+            
+        </tr>
+    </thead>
+    <tbody *ngFor="let c of carrito; let i=index">
+            <td>{{ i }}</td>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.cantidad }}</td>
+            <td>{{ c.precio | currency }}</td>
+            <td>{{ c.precio * c.cantidad }}</td>
+            <td>
+                <button>X</button>
+            </td>
+            <td></td>
+    </tbody>
+</table>
+
+<h2>Total a Pagar: {{ total_pagar }}</h2>
