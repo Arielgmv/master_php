@@ -7,18 +7,26 @@ import { AppComponent } from './app.component';
 import { PruebaComponent } from './prueba/prueba.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CarritoComponent } from './cliente/carrito/carrito.component';
+import { LoginComponent } from './cliente/login/login.component';
+import { NosotrosComponent } from './cliente/nosotros/nosotros.component';
+import { PublicacionesComponent } from './cliente/publicaciones/publicaciones.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     PruebaComponent,
     ContactoComponent,
-    CarritoComponent
+    CarritoComponent,
+    LoginComponent,
+    NosotrosComponent,
+    PublicacionesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
