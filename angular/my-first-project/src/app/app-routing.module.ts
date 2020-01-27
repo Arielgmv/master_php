@@ -4,7 +4,7 @@ import { CarritoComponent } from './cliente/carrito/carrito.component';
 import { NosotrosComponent } from './cliente/nosotros/nosotros.component';
 import { LoginComponent } from './cliente/login/login.component';
 import { PublicacionesComponent } from './cliente/publicaciones/publicaciones.component';
-
+import { ComentarioComponent } from './cliente/comentario/comentario.component';
 
 const routes: Routes = [
   {
@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'publicaciones',
     component: PublicacionesComponent
+  },
+  {
+    path: 'comentario',
+    component: ComentarioComponent
   }
 ];
 

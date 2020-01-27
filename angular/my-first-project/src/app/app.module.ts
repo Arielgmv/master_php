@@ -11,6 +11,7 @@ import { LoginComponent } from './cliente/login/login.component';
 import { NosotrosComponent } from './cliente/nosotros/nosotros.component';
 import { PublicacionesComponent } from './cliente/publicaciones/publicaciones.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ComentarioComponent } from './cliente/comentario/comentario.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     CarritoComponent,
     LoginComponent,
     NosotrosComponent,
-    PublicacionesComponent
+    PublicacionesComponent,
+    ComentarioComponent
   ],
   imports: [
     BrowserModule,
