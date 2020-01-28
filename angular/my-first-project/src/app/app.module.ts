@@ -12,6 +12,8 @@ import { NosotrosComponent } from './cliente/nosotros/nosotros.component';
 import { PublicacionesComponent } from './cliente/publicaciones/publicaciones.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ComentarioComponent } from './cliente/comentario/comentario.component';
+import { InicioComponent } from './cliente/inicio/inicio.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { ComentarioComponent } from './cliente/comentario/comentario.component';
     LoginComponent,
     NosotrosComponent,
     PublicacionesComponent,
-    ComentarioComponent
+    ComentarioComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

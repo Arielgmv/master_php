@@ -5,27 +5,38 @@ import { NosotrosComponent } from './cliente/nosotros/nosotros.component';
 import { LoginComponent } from './cliente/login/login.component';
 import { PublicacionesComponent } from './cliente/publicaciones/publicaciones.component';
 import { ComentarioComponent } from './cliente/comentario/comentario.component';
+import { InicioComponent } from './cliente/inicio/inicio.component';
 
 const routes: Routes = [
   {
-    path: 'carrito',
-    component: CarritoComponent
+    path: '',
+    component: InicioComponent,
+    children: [
+      {
+        path: 'carrito',
+        component: CarritoComponent
+      },
+      {
+        path: 'nosotros',
+        component: NosotrosComponent
+      },
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'publicaciones',
+        component: PublicacionesComponent
+      },
+      {
+        path: 'comentario',
+        component: ComentarioComponent
+      },
+    ]
   },
   {
-    path: 'nosotros',
-    component: NosotrosComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'publicaciones',
-    component: PublicacionesComponent
-  },
-  {
-    path: 'comentario',
-    component: ComentarioComponent
+    path: 'admin',
+    loadChildren: './admin/admin.module#AdminModule'
   }
 ];
 
