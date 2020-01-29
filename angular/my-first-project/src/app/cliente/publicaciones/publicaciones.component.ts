@@ -8,16 +8,20 @@ import { PublicacionesService } from './publicaciones.service';
 })
 export class PublicacionesComponent implements OnInit {
 
+  cargando: boolean = false;
   publicaciones: any =[];
 
   constructor(protected publicacionesService: PublicacionesService) { 
+    this.cargando = true;
     this.publicacionesService.lista_publicaciones().subscribe(
       (res: any) => {
         console.log(res);
         this.publicaciones = res;
+        this.cargando = false;
       },
       (error: any) => {
         console.log(error);
+        this.cargando = false;
       }
     );
   }
