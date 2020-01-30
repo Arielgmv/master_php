@@ -1,1 +1,13 @@
-<p>categoria-create works!</p>
+<h2>Nueva Categoria</h2>
+
+<form [formGroup]="categoriaForm">
+    <label for="nom">Ingrese Nombre:</label>
+    <input type="text" formControlName="nombre">
+    <br>
+    <label for="nom">Ingrese Descripcion:</label>
+    <textarea cols="30" rows="10" formControlName="descripcion"></textarea>
+    <br>
+    <input type="button" [disabled]="!categoriaForm.valid" value="guardar categoria" (click)="guardar()">
+</form>
+
+<p>{{ categoriaForm.value | json }}</p>

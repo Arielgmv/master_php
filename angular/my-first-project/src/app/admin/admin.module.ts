@@ -25,6 +25,7 @@ import { ProveedorUpdateComponent } from './proveedor/proveedor-update/proveedor
 import { UsuarioCreateComponent } from './usuario/usuario-create/usuario-create.component';
 import { UsuarioIndexComponent } from './usuario/usuario-index/usuario-index.component';
 import { UsuarioUpdateComponent } from './usuario/usuario-update/usuario-update.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -38,7 +39,8 @@ import { UsuarioUpdateComponent } from './usuario/usuario-update/usuario-update.
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }
