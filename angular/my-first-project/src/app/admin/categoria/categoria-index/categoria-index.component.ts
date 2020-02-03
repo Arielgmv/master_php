@@ -27,4 +27,15 @@ export class CategoriaIndexComponent implements OnInit {
   ngOnInit() {
   }
 
+  eliminar(id, index){
+    this.categoriaService.destroy(id).subscribe(
+      (res:any)=>{
+        console.log(res);
+        this.categorias.splice(index, 1);
+      },
+      (error:any)=>{
+        console.log(error);        
+      }
+    )
+  }
 }

@@ -6,6 +6,7 @@ import { LoginComponent } from './cliente/login/login.component';
 import { PublicacionesComponent } from './cliente/publicaciones/publicaciones.component';
 import { ComentarioComponent } from './cliente/comentario/comentario.component';
 import { InicioComponent } from './cliente/inicio/inicio.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -36,7 +37,8 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: './admin/admin.module#AdminModule'
+    loadChildren: './admin/admin.module#AdminModule',
+    canActivate: [AuthGuard]
   }
 ];
 

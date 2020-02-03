@@ -1,1 +1,12 @@
-<p>categoria-update works!</p>
+<p>Modificar categoria</p>
+<form [formGroup]="categoriaForm">
+    <label for="nom">Ingrese Nombre:</label>
+    <input type="text" formControlName="nombre">
+    <br>
+    <label for="nom">Ingrese Descripcion:</label>
+    <textarea cols="30" rows="10" formControlName="descripcion"></textarea>
+    <br>
+    <input type="button" [disabled]="!categoriaForm.valid" value="guardar categoria" (click)="modificar()">
+</form>
+
+<p>{{ categoriaForm.value | json }}</p>

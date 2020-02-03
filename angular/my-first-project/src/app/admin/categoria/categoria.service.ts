@@ -24,4 +24,16 @@ export class CategoriaService {
    store(datos){
      return this.http.post(this.base + "/categoria", datos, {headers: this.reqHeader});
    }
+
+   show(id:any){
+     return this.http.get(this.base + "/categoria/"+id, {headers: this.reqHeader});
+   }
+
+   update(datos, id:number){
+    return this.http.put(this.base + "/categoria/"+id, datos, {headers: this.reqHeader});
+   }
+
+   destroy(id: Number){
+     return this.http.delete(this.base + "/categoria/" +id, {headers: this.reqHeader});
+   }
 }

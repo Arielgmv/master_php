@@ -9,13 +9,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let cat of categorias">
+        <tr *ngFor="let cat of categorias; let i=index">
             <td>{{ cat.id }}</td>
             <td>{{ cat.nombre }}</td>
             <td>{{ cat.descripcion }}</td>
             <td>
-                <button>Editar</button>
-                <button>Eliminar</button>
+                <a routerLink="/admin/categoria/{{cat.id}}/modificar">Editar</a>
+                <button (click)="eliminar(cat.id, i)">x</button>
             </td>
         </tr>
     </tbody>
