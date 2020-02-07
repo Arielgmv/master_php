@@ -20,7 +20,7 @@ function  muestraNombres(){
 muestraNombres();
 muestraNombres();
 //ejemplo 2
-//http://127.0.0.1/master_php/aprendiendo-php/12-funciones/index.php.?numero=98
+//http://127.0.0.1/master_php/aprendiendo-php/12-funciones/index.php?numero=98
 function tabla($numero){
     echo '<h3>Tabla de multiplicar del número '.$numero.'</h3>';
     for($i=1; $i<=10; $i++){
@@ -74,6 +74,6 @@ function devuelveElNombre($nombre, $apellidos){
             getApellidos($apellidos);
     return $texto;
 }
-echo getNombre('Ana');
+echo getNombre('Ana Maria');
 echo getApellidos('Garcia Limchs');
 echo devuelveElNombre('Ariel', 'Muñoz Villegas');

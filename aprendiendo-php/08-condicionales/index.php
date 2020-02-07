@@ -115,7 +115,7 @@ if($pais=='Mexico'||$pais=='España'||$pais=='Bolivia'){
 }
 echo '<br/>';
 //Ejemplo 6 switch
-$dia=1;
+$dia=12;
 switch ($dia){
     case 1:
         echo 'Lunes';
