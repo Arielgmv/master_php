@@ -18,7 +18,7 @@ $tabla=array(
 //var_dump(array_keys($tabla));
 $categorias= array_keys($tabla);
 ?>
-<table border="1">
+<table border="2">
     <?php require_once 'ejercicio5/encabezados.php'; ?>
     <?php require_once 'ejercicio5/primera.php'; ?>
     <?php require_once 'ejercicio5/segunda.php'; ?>

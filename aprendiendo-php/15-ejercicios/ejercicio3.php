@@ -5,7 +5,7 @@
  * rellenarla con texto en minúscula y mostrarlo en mayúsculas y negrita
  */
 
-$texto='Ariel';
+$texto='';
 if(empty($texto)){
     $texto='hola yo soy el relleno de la variable texto';
     $textoMAYUS= strtoupper($texto);

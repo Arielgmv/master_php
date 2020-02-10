@@ -10,7 +10,7 @@
             if(isset($_GET['error'])){
                 $error=$_GET['error'];
                 if($error=='faltan valores'){
-                    echo '<strong style="color:red">Introduce todos los datos en todos los datos del formulario</strong>';
+                    echo '<strong style="color:red">Introduce todos los datos en todos los campos del formulario</strong>';
                 }
                 if($error=='apellidos'){
                     echo '<strong style="color:red">Introduce bien el apellido</strong>';
@@ -19,7 +19,7 @@
         ?>
         <form method="POST" action="procesar_formulario.php">
             <label for="nombre">Nombre</label><br/>
-            <input type="text" name="nombre" required="required" pattern="[A-Za-z]+"><br/>
+            <input type="text" name="nombre" pattern="[A-Za-z]+"><br/>
             
             <label for="apellidos">Apellidos</label><br/>
             <input type="text" name="apellidos"><br/>
