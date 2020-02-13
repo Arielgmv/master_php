@@ -22,7 +22,7 @@
             <input type="text" name="nombre" pattern="[A-Za-z]+"><br/>
             
             <label for="apellidos">Apellidos</label><br/>
-            <input type="text" name="apellidos"><br/>
+            <input type="text" name="apellidos" pattern="[A-Za-z]"><br/>
             
             <label for="edad">Edad</label><br/>
             <input type="number" name="edad" required="required" pattern="[0-9]+"><br/>
