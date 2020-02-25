@@ -14,6 +14,7 @@ export class CarritoComponent implements OnInit {
   categorias:any = [];
   productos:any = [];
   cant_venta:any= 1;
+  pruebas:any = [];
   
   carrito:any = [];
   total_pagar:number = 0;
@@ -25,12 +26,18 @@ export class CarritoComponent implements OnInit {
   })
 
   constructor() { 
-    this.titulo = "Carrito de compras 1";
+    this.titulo = "Carrito de compras";
     this.estado = true;
-    this.cant_productos = 8;
+    this.cant_productos = 20;
+    
     this.categorias.push("ropa");
     this.categorias.push("muebles");
     this.categorias.push("juguetes");
+    this.categorias.push("deportes");
+
+    this.pruebas.push("test 1");
+    this.pruebas.push("test 2");
+    this.pruebas.push("test 3");
 
     this.productos.push({
                         nombre:"chamarra",
