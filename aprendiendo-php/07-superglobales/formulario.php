@@ -15,6 +15,10 @@
                 <label for="apellidos">Apellidos</label>
                 <input type="text" name="apellidos" />
             </p>
+            <p>
+                <label for="profesion">Profesión</label>
+                <input type="text" name="profesion">
+            </p>
             <input type="submit" value="Enviar datos" />
         </form>
     </body>

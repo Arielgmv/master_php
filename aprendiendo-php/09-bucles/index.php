@@ -24,7 +24,9 @@ if(isset($_GET['numero'])){
 } else {
     $numero=1;
 }
+echo('<pre>');
 var_dump($numero);
+echo('</pre>');
 echo '<h1>Tabla de multiplicar del número '.$numero.'</h1>';
 $contador=1;
 while($contador<=10){
@@ -36,9 +38,9 @@ echo '<hr/>';
 do{
     bloque de instrucciones
 }while(condicion);*/
-$edad=20;
+$edad=25;
 $contador=1;
 do{
-echo ' Tienes acceso al local privado '.$contador.'<br/>';
+echo 'Tienes acceso al local privado '.$contador.'<br/>';
 $contador++;
 }while ($edad>=18 && $contador<=10);

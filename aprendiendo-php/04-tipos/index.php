@@ -37,5 +37,11 @@ var_dump($mi_nombre);
 echo '<br />';
 $mi_array[]='prueba 1';
 $mi_array[]='prueba de 2';
+echo('<pre>');
 var_dump($mi_array);
+echo('</pre>');
+echo '<br>';
+echo('<pre>');
+print_r($mi_array);
+echo('</pre>');
 ?>

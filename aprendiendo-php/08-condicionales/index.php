@@ -59,7 +59,7 @@ if($edad>=$mayoria_edad){
 }
 echo '<br/>';
 //Ejemplo 4
-$dia=6;
+$dia=2;
 /*if($dia==1){
     echo 'Es Lunes';
 } else {
@@ -115,7 +115,7 @@ if($pais=='Mexico'||$pais=='España'||$pais=='Bolivia'){
 }
 echo '<br/>';
 //Ejemplo 6 switch
-$dia=12;
+$dia=3;
 switch ($dia){
     case 1:
         echo 'Lunes';

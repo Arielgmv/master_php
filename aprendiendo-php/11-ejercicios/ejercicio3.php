@@ -1,21 +1,15 @@
 <?php
-/*
- *Ejercicio 3. Escribir un programa que imprima por pantalla los cuadrados
- * (un número multiplicado por si mismo) de los 40 primeros números naturales
- *PD: Utilizar bucle while
- */
-$multiplicacion=1;
-for ($i=1; $i<=40; $i++){
-    $multiplicacion=$i;
-    $multiplicacion=$multiplicacion*$i;
-    echo $multiplicacion.', ';    
-};
-echo '<hr/>';
-$multiplicacion=1;
-$i=1;
-while ($i<=40) {
-    $multiplicacion=$i;
-    $multiplicacion=$multiplicacion*$i;
-    echo $multiplicacion.', ';
-    $i++;
-};
+/*Ejercicio 3. Imprimir los cuadrados (un numero multiplicado por si mismo)
+de los 40 primeros numeros naturales
+PD: Utilizar bucle while*/
+for ($i=0; $i<=40 ; $i++) { 
+    $cuadrado=$i*$i;
+    echo $cuadrado.', ';
+}
+echo '<hr>';
+$numero=0;
+while ($numero<=40) {
+    $cuadrado=$numero*$numero;
+    echo $cuadrado.', ';
+    $numero++;
+}
