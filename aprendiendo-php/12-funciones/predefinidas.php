@@ -1,13 +1,15 @@
 <?php
 //Debuggear
 $nombre='Ariel Muñoz';
+echo '<pre>';
 var_dump($nombre);
+echo '</pre>';
 
 //fechas
 echo '<br/>';
 echo date('d-m-Y');
 echo '<br/>';
-echo time();
+echo '<h3>'.time().'</h3>';
 
 //Matemáticas
 echo '<br/>';
@@ -38,14 +40,16 @@ if(!is_float($nombre)){
 echo '<br/>';
 
 //comprobar si existe una variable
-if(isset($nombre)){
+if(isset($nombre1)){
     echo 'La variable existe';
 } else {
     echo 'La variable no existe';
 }
 echo '<br/>';
 $frase='    mi contenido    ';
+
 var_dump($frase);
+
 echo '<br/>';
 
 //limpiar espacios
@@ -70,12 +74,12 @@ if(empty($texto)){
 //contar caracteres de una cadena de texto
 echo '<br/>';
 $cadena='12345';
-echo strlen($cadena);
+echo 'El número de caracteres es: '.strlen($cadena);
 
 //Encontrar caracter
 echo '<br/>';
 $frase='La vida es bella';
-echo strpos($frase, 'vida');
+echo 'Encuentro el caracter en la posición: '.strpos($frase, 'vida');
 
 //Reemplazar palabras de un string
 echo '<br/>';

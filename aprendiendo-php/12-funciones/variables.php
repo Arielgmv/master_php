@@ -21,14 +21,14 @@ function holaMundo(){
 echo holaMundo();
 //funciones variables
 function buenosDias(){
-    return 'Hola! Buenos Días';
+    return '<h3>Hola! Buenos Días</h3>';
 }
 function buenasTardes(){
-    return 'Hola! Buenas Tardes';
+    return '<h3>Hola! Buenas Tardes</h3>';
 }
 
 function buenasNoches(){
     return '<h3>Te vas a dormir yá, buenas noches</h3>';
 }
-$horario='buenasNoches';
+$horario='buenasTardes';
 echo $horario();

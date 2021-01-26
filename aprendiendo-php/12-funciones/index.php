@@ -19,6 +19,7 @@ function  muestraNombres(){
 //invocar funcion
 muestraNombres();
 muestraNombres();
+muestraNombres();
 //ejemplo 2
 //http://127.0.0.1/master_php/aprendiendo-php/12-funciones/index.php?numero=98
 function tabla($numero){
@@ -56,8 +57,8 @@ function calculadora($numero1, $numero2, $negrita=false){
     }
     echo '<hr/>';
 }
-calculadora(2, 1, true);
-calculadora(43, 34);
+calculadora(6, 7, true);
+//calculadora(43, 34);
 //ejemplo 4
 echo '<h3>Return</h3>';
 function getNombre ($nombre){
@@ -69,11 +70,9 @@ function getApellidos($apellidos){
     return $texto;
 }
 function devuelveElNombre($nombre, $apellidos){
-    $texto= getNombre($nombre)
-            .'<br/>'.
-            getApellidos($apellidos);
+    $texto= getNombre($nombre).getApellidos($apellidos);
     return $texto;
 }
-echo getNombre('Ana Maria');
-echo getApellidos('Garcia Limchs');
+echo getNombre('Pablo');
+echo getApellidos('Muñoz Villegas');
 echo devuelveElNombre('Ariel', 'Muñoz Villegas');
