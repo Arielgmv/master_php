@@ -7,12 +7,19 @@
  */
 $pelicula='Batman';
 $peliculas= array('Batman', 'Spiderman', 'Lord of the rings');
+echo '<pre>';
+var_dump($pelicula);
 var_dump($peliculas);
+echo '</pre>';
 echo '<hr/>';
+echo '<pre>';
 var_dump($peliculas[1]);
+echo '</pre>';
 echo '<hr/>';
 $cantantes=['Metallica', 'Pantera', 'Sepultura'];
+echo '<pre>';
 var_dump($cantantes);
+echo '</pre>';
 echo '<hr/>';
 echo $cantantes[1];
 echo '<hr/>';
@@ -29,7 +36,7 @@ echo '</ul>';
 echo '<hr/>';
 echo '<h1>Listado de cantantes</h1>';
 foreach ($cantantes as $cantante) {
-    echo '<ul><li>'.$cantante.'</li>6</ul>';
+    echo '<ul><li>'.$cantante.'</li></ul>';
 }
 echo '<hr/>';
 //Arrays asociativos
@@ -38,9 +45,13 @@ $personas=array(
     'apellidos'=>'Muñoz',
     'web'=>'www.atuxempleos.com'
 );
+echo '<pre>';
 var_dump($personas);
+echo '</pre>';
 echo '<br/>';
+echo '<pre>';
 var_dump($personas['apellidos']);
+echo '</pre>';
 echo '<br/>';
 echo($personas['apellidos']);
 
@@ -64,4 +75,7 @@ $contactos=array(
         'apellido'=>'Soliz'
     ),
 );
+echo '<pre>';
 var_dump($contactos);
+echo '</pre>';
+echo($contactos[0]['apellido']);

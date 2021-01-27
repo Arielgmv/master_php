@@ -3,6 +3,7 @@
 //con require no
     require 'includes/cabecera.php';
 ?>
+        <div>
             <!--Contenido-->
         </div>
         <div>

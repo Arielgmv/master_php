@@ -2,6 +2,7 @@
 include_once 'includes/cabecera.php';
 include_once 'includes/cabecera.php';
 ?>
+        <div>
             <!--Contenido-->
         </div>
         <div>
