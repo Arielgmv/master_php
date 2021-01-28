@@ -33,10 +33,12 @@ echo count($numeros);
 
 //Buscar dentro de un array
 echo '<hr/>';
-$busqueda=24;
+$busqueda=2;
 echo 'Buscar dentro del array el número '.$busqueda.'<br/>';
 $search=array_search($busqueda, $numeros);
-//var_dump($search);
+echo '<pre>';
+var_dump($search);
+echo '</pre>';
 if(!empty($search)){
     echo '<h4>El número '.$busqueda.' existe en el array, en el índice '.$search.'</h4>';
 }else{
