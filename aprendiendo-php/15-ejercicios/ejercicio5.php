@@ -14,8 +14,12 @@ $tabla=array(
     'Aventura'=>array('ASSASINS', 'Crash Bandicoot', 'Prince of Persia'),
     'Deportes'=>array('Fifa', 'PES', 'MotoGP 19')
 );
-
-//var_dump(array_keys($tabla));
+echo '<pre>';
+var_dump($tabla);
+echo '</pre>';
+echo '<pre>';
+var_dump(array_keys($tabla));
+echo '</pre>';
 $categorias= array_keys($tabla);
 ?>
 <table border="2">
