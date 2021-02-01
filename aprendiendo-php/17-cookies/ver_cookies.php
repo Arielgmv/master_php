@@ -5,12 +5,18 @@
  */
 if(isset($_COOKIE['micookie'])){
     echo '<h1>'.$_COOKIE['micookie'].'</h1>';
+    echo '<pre>';
+    var_dump($_COOKIE['micookie']);
+    echo '</pre>';
 } else {
     echo 'No existe la cookie<br/>';
 }
 
 if(isset($_COOKIE['oneyear'])){
     echo '<h1>'.$_COOKIE['oneyear'].'</h1>';
+    echo '<pre>';
+    var_dump($_COOKIE['oneyear']);
+    echo '</pre>';
 } else {
     echo 'No existe la cookie<br/>';
 }

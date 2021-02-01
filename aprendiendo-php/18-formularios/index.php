@@ -11,7 +11,7 @@
             <p><input type="text" name="nombre" required="required" placeholder="Ingresa tu nombre"/></p>
             
             <label for="apellido">Apellido:</label>            
-            <p><input type="text" name="apellido" autofocus="autofocus" maxlength="10" minlength="5" pattern="[A-Z ]+" /></p>            
+            <p><input type="text" name="apellido" autofocus="autofocus" maxlength="10" minlength="5"/></p>            
             
             <label for="boton">Botón</label>            
             <p><input type="button" name="boton" value="Click Aquí"/></p>

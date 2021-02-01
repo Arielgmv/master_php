@@ -12,3 +12,7 @@ $variable_normal='Soy una cadena de texto';
 $_SESSION['variable_persistente']='Hola soy una sesión activa';
 echo $variable_normal.'<br/>';
 echo $_SESSION['variable_persistente'];
+echo '<pre>';
+var_dump($variable_normal);
+var_dump($_SESSION['variable_persistente']);
+echo '</pre>';
