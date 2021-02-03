@@ -29,15 +29,16 @@ if(!empty($_POST['nombre']) && !empty($_POST['apellidos']) && !empty($_POST['eda
     if(empty($password) || strlen($password)<5){
         $error = 'password';        
     }
-    /*
+    
     //debug
+    /*echo '<pre>';
     var_dump($_POST);
     var_dump($error);
+    echo '</pre>';
     die();*/
 } else {
     $error = 'faltan valores';    
 }
-
 if($error!='ok'){
     header('Location:index.php?error='.$error);
 }
