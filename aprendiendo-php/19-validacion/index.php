@@ -5,7 +5,25 @@
         <title>Validación de formularios PHP</title>
     </head>
     <body>
-        <h1>Validar formularios en PHP</h1>
+        <h1>Validar formularios en PHP</h1>        
+        <form method="POST" action="./procesar_formulario.php">
+            <label for="nombre">Nombre</label><br/>
+            <input type="text" name="nombre" pattern="[A-Za-z]+"><br/>
+            
+            <label for="apellidos">Apellidos</label><br/>
+            <input type="text" name="apellidos" pattern="[A-Za-z]+"><br/>
+            
+            <label for="edad">Edad</label><br/>
+            <input type="number" name="edad" required="required" pattern="[0-9]+"><br/>
+            
+            <label for="email">Correo Electrónico</label><br/>
+            <input type="email" name="email" required="required"><br/>
+            
+            <label for="pass">Contraseña</label><br/>
+            <input type="password" name="pass" required="required"><br/>
+            
+            <input type="submit" value="Enviar"/>            
+        </form>
         <?php
             if(isset($_GET['error'])){
                 echo '<pre>';
@@ -26,23 +44,5 @@
                 }
             }
         ?>
-        <form method="POST" action="./procesar_formulario.php">
-            <label for="nombre">Nombre</label><br/>
-            <input type="text" name="nombre" pattern="[A-Za-z]+"><br/>
-            
-            <label for="apellidos">Apellidos</label><br/>
-            <input type="text" name="apellidos" pattern="[A-Za-z]+"><br/>
-            
-            <label for="edad">Edad</label><br/>
-            <input type="number" name="edad" required="required" pattern="[0-9]+"><br/>
-            
-            <label for="email">Correo Electrónico</label><br/>
-            <input type="email" name="email" required="required"><br/>
-            
-            <label for="pass">Contraseña</label><br/>
-            <input type="password" name="pass" required="required"><br/>
-            
-            <input type="submit" value="Enviar"/>            
-        </form>
     </body>
 </html>

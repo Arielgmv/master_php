@@ -53,10 +53,10 @@ if($error!='ok'){
     <body>
         <?php if($error=='ok'): ?>
         <h1>Datos validados correctamente</h1>
-            <p><?=$nombre?></p>
-            <p><?=$apellidos?></p>
-            <p><?=$edad?></p>
-            <p><?=$email?></p>            
+            <p>El nombre es: <?=$nombre?></p>
+            <p>El apellido es: <?=$apellidos?></p>
+            <p>La edad es: <?=$edad?></p>
+            <p>El mail es: <?=$email?></p>            
         <?php endif;?>
     </body>
 </html>

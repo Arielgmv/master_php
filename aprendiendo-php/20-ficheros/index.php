@@ -12,7 +12,7 @@ fwrite($archivo, 'Soy una línea de texto');
 
 //Cerrar archivo
 fclose($archivo);
-*/
+
 //Copiar
 //copy('fichero_texto.txt', 'fichero_copiado.txt') or die('Error al copiar');
 //Renombrar
@@ -20,7 +20,7 @@ fclose($archivo);
 
 //Eliminar
 //unlink('copia.txt') or die('Error al borrar');
-
+*/
 if(file_exists('fichero_texto.txt')){
     echo 'El archivo existe';
 } else {

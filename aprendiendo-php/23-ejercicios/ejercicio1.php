@@ -7,6 +7,12 @@
 
 session_start();
 
+//$_SESSION['numero']=8;
+
+echo '<pre>';
+var_dump($_SESSION['numero']);
+echo '</pre>';
+
 if(!isset($_SESSION["numero"])){
     $_SESSION['numero']=0;
 }

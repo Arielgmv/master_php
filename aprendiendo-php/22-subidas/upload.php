@@ -2,6 +2,10 @@
 $archivo=$_FILES['archivo'];
 $nombre=$archivo['name'];
 $tipo=$archivo['type'];
+/*echo '<pre>';
+var_dump($_FILES['archivo']);
+echo '</pre>';
+die();*/
 if($tipo=='image/jpg' || $tipo=='image/jpeg' || $tipo=='image/png' || $tipo=='image/git'){
     if(!is_dir('images')){
         mkdir('images', 0777);
@@ -13,5 +17,7 @@ if($tipo=='image/jpg' || $tipo=='image/jpeg' || $tipo=='image/png' || $tipo=='im
     header('Refresh: 5; URL=index.php');
     echo '<h1>Sube una imagen con un formato correcto, por favor...</h1>';
 }
+echo '<pre>';
 var_dump($archivo);
+echo '</pre>';
 die();

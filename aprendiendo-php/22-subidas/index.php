@@ -13,9 +13,15 @@
         <h1>Listado de Imágenes</h1>
         <?php
         $gestor= opendir('./images');
+        echo '<pre>';
+        var_dump($gestor);
+        echo '</pre><hr>';
             if($gestor):
                 while(($image= readdir($gestor)) !==false):
                     if($image!='.' && $image!='..'):
+                        echo '<pre>';
+                        var_dump($image);
+                        echo '</pre>';
                         echo "<img src='images/$image' width='200px'/></br>";
                     endif;
                 endwhile;
