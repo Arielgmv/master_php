@@ -7,8 +7,11 @@
  * 3. Recoger una variable por get y validarla
  * 4. Mostrar el resultado
  */
+echo ('<pre>');
+var_dump($_GET['email']);
+echo ('</pre>');
 
-function validarEmail($email){
+ function validarEmail($email){
     $status="No válido";
     if(!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)){
         $status="Válido";
