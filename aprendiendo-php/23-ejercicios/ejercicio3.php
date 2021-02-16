@@ -3,7 +3,13 @@
  * Ejercicio 3. Hacer una interfaz de usuario (formulario) con dos inputs y 4 botones
  * uno para sumar, restar, multiplicar y dividir.
  */
+echo ('<pre>');
+var_dump($_POST);
+echo ('</pre>');
 $resultado = false;
+echo ('<pre>');
+var_dump($resultado);
+echo ('</pre>');
 if(isset($_POST['n1']) && isset($_POST['n2'])){
    if(isset($_POST['sumar'])){
        $resultado='El resultado es: '.($_POST['n1'] + $_POST['n2']);
@@ -41,6 +47,9 @@ if(isset($_POST['n1']) && isset($_POST['n2'])){
             //Resultado
             if($resultado!=false):
                 echo '<h2>'.$resultado.'</h2>';
+                echo ('<pre>');
+                var_dump($resultado);
+                echo ('</pre>');
             endif;
         ?>
     </body>
