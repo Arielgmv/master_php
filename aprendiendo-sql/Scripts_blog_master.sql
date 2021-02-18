@@ -26,4 +26,32 @@ SELECT TRIM(CONCAT('      ', nombre, ' ', apellidos)) AS Limpieza_Espacios_Blanc
 SELECT email, fecha, CURDATE() FROM usuarios;
 SELECT email, fecha, CURDATE() AS 'Fecha Actual' FROM usuarios;
 #días diferencia#
+SELECT email, fecha, DATEDIFF(fecha, CURDATE()) AS 'Fecha Actual' FROM usuarios;
+SELECT email, fecha, DAYNAME(fecha) AS 'Fecha Actual' FROM usuarios;
+#fecha del mes, semana, año#
+SELECT email, fecha, DAYOFMONTH(fecha) AS 'Fecha Actual' FROM usuarios;
+SELECT email, fecha, DAYOFWEEK(fecha) AS 'Fecha Actual' FROM usuarios;
+SELECT email, fecha, DAYOFYEAR(fecha) AS 'Fecha Actual' FROM usuarios;
+#mes del año#
+SELECT email, fecha, MONTH(fecha) AS 'Fecha Actual' FROM usuarios;
+#año#
+SELECT email, fecha, YEAR(fecha) AS 'Fecha Actual' FROM usuarios;
+#Hora Actual#
+SELECT email, fecha, CURTIME() AS 'Hora Actual' FROM usuarios;
+#hora del servidor#
+SELECT email, SYSDATE() AS 'Fecha Actual' FROM usuarios;
+#Formatear el campo fecha#
+SELECT email, fecha, DATE_FORMAT(fecha, '%M-%d-%Y') FROM usuarios;
+#Funciones generales#
+#Saber si es nulo#
+SELECT email, apellidos, ISNULL(apellidos) FROM usuarios;
+#Comprobar si dos campos son iguales#
+SELECT email, nombre, password, STRCMP(nombre, email) AS Comparación FROM usuarios;
+#versión de mysql#
+SELECT VERSION() FROM usuarios;
+#usuario de mysql#
+SELECT USER() FROM usuarios;
+#si es nulo#
+SELECT IFNULL(apellidos, 'Campo vacio') FROM usuarios;
+
 

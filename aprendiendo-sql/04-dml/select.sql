@@ -43,7 +43,7 @@ SELECT email, MONTH(fecha) AS 'Fecha Actual' FROM usuarios;
 #año#
 SELECT email, YEAR(fecha) AS 'Fecha Actual' FROM usuarios;
 #Hora Actual#
-SELECT email, CURTIME(fecha) AS 'Fecha Actual' FROM usuarios;
+SELECT email, CURTIME() AS 'Fecha Actual' FROM usuarios;
 #hora del servidor#
 SELECT email, SYSDATE() AS 'Fecha Actual' FROM usuarios;
 #Formatear el campo fecha#
