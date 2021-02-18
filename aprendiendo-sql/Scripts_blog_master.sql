@@ -15,4 +15,15 @@ SELECT PI() AS 'Absoluto' FROM usuarios;
 SELECT ROUND(7,89) AS 'Absoluto' FROM usuarios;
 SELECT SQRT(25) AS 'Absoluto' FROM usuarios;
 /*Funciones Texto*/
+SELECT UPPER(nombre) FROM usuarios;
+SELECT LOWER(nombre) FROM usuarios;
+SELECT CONCAT(nombre, ' ', apellidos) AS Concatenación FROM usuarios;
+SELECT nombre, LENGTH(nombre) AS Extensión FROM usuarios;
+SELECT CONCAT('      ', nombre, '  ', apellidos) AS Concatenación FROM usuarios;
+SELECT TRIM(CONCAT('      ', nombre, ' ', apellidos)) AS Limpieza_Espacios_Blanco FROM usuarios;
+/*Funciones Fecha*/
+#Current Date#
+SELECT email, fecha, CURDATE() FROM usuarios;
+SELECT email, fecha, CURDATE() AS 'Fecha Actual' FROM usuarios;
+#días diferencia#
 
