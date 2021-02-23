@@ -91,3 +91,67 @@ SELECT * FROM blog_master.usuarios u ORDER BY u.id DESC;
 SELECT * FROM blog_master.usuarios u LIMIT 1;
 SELECT * FROM blog_master.usuarios u LIMIT 1, 2;
 
+/*Consultas de agrupamiento*/
+SELECT COUNT(e.titulo) AS 'Número de entradas', e.categoria_id FROM blog_master.entradas e GROUP BY e.categoria_id; 
+
+/*Consultas de agrupamiento con condiciones, having es lo mismo que where pero para las consultas con agrupamiento*/
+SELECT COUNT(e.titulo) AS 'Número de entradas', e.categoria_id FROM blog_master.entradas e GROUP BY e.categoria_id HAVING COUNT(titulo)>=4;
+SELECT COUNT(titulo) AS 'Número de entradas', categoria_id FROM entradas GROUP BY categoria_id HAVING COUNT(titulo) >=2;
+
+/*
+AVG     Sacar la media
+COUNT   Contar el número de elementos
+MAX     Valor máximo del grupo
+MIN     Valor mínimo del grupo
+SUM     Sumar todo el contenido del grupo
+*/
+SELECT  AVG(e.id) FROM blog_master.entradas e;
+SELECT  COUNT(e.id) FROM blog_master.entradas e;
+SELECT  MAX(e.id) FROM blog_master.entradas e;
+SELECT  MIN(e.id) FROM blog_master.entradas e;
+SELECT  SUM(e.id) FROM blog_master.entradas e;
+
+/*Inserts para categorías*/
+INSERT INTO blog_master.categorias VALUES(null, 'Terror');
+
+/*Insert para entradas*/
+INSERT INTO blog_master.entradas VALUES(null, 13, 6, 'Novedades de Helloween', 'Más novedades', CURDATE());
+
+/*Subconsultas
+- Consultas que se ejecutan dentro de otras
+- Consiste en utilizar los resultados de la subconsulta para operar en la consulta
+principal
+- Jugando con las claves ajenas
+*/
+/*Sacar usuarios que existen en la tabla entradas*/
+SELECT u.nombre, u.apellidos, u.id FROM blog_master.usuarios u WHERE u.id IN (SELECT e.usuario_id FROM blog_master.entradas e);
+SELECT * FROM usuarios WHERE id IN (SELECT usuario_id FROM entradas);
+
+/*Sacar usuarios que no existen en la tabla entradas*/
+SELECT u.nombre, u.apellidos, u.id FROM blog_master.usuarios u WHERE u.id NOT IN (SELECT e.usuario_id FROM blog_master.entradas e);
+SELECT * FROM usuarios WHERE id NOT IN (SELECT usuario_id FROM entradas);
+
+/*Sacar los usuarios que tengan alguna entrada que en su título hable de Assasins*/
+SELECT * FROM blog_master.usuarios u WHERE u.id IN (SELECT e.usuario_id FROM blog_master.entradas e WHERE e.titulo like '%Assasins%');
+SELECT * FROM usuarios WHERE id IN (SELECT usuario_id FROM entradas WHERE titulo like '%Assasins%');
+
+/*Sacar todas las entradas de la categoría acción utilizando su nombre*/
+SELECT * FROM blog_master.entradas e WHERE e.categoria_id IN (SELECT c.id FROM blog_master.categorias c WHERE c.nombre='Acción');
+SELECT * FROM entradas WHERE categoria_id IN (SELECT id FROM categorias WHERE nombre='Acción');
+
+SELECT * 
+FROM blog_master.entradas AS e 
+INNER JOIN blog_master.categorias AS c ON e.categoria_id = c.id 
+WHERE c.nombre = 'Acción';
+
+/*Mostrar las categorías con más de 2 o más entradas*/
+SELECT * FROM  blog_master.categorias c WHERE c.id IN (SELECT e.categoria_id FROM blog_master.entradas e GROUP BY e.categoria_id HAVING COUNT(e.categoria_id)>=2);
+SELECT * FROM categorias WHERE id IN (SELECT categoria_id FROM entradas GROUP BY categoria_id HAVING COUNT(categoria_id)>=2);
+
+/*Mostrar los usuarios que crearon una entrada un martes*/
+SELECT CONCAT(u.nombre, ' ', u.apellidos) AS Usuarios, u.fecha FROM blog_master.usuarios u WHERE u.id IN (SELECT e.usuario_id FROM blog_master.entradas e WHERE DAYNAME(e.fecha)='Tuesday');
+SELECT nombre FROM usuarios WHERE id IN (SELECT usuario_id FROM entradas WHERE DAYOFWEEK(fecha)=3);  
+
+/*Mostrar el nombre del usuario que tenga más entradas*//*Colocamos = en vez de IN por que sólo devuelve un valor*/
+
+
