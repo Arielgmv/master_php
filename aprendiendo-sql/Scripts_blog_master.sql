@@ -153,5 +153,43 @@ SELECT CONCAT(u.nombre, ' ', u.apellidos) AS Usuarios, u.fecha FROM blog_master.
 SELECT nombre FROM usuarios WHERE id IN (SELECT usuario_id FROM entradas WHERE DAYOFWEEK(fecha)=3);  
 
 /*Mostrar el nombre del usuario que tenga más entradas*//*Colocamos = en vez de IN por que sólo devuelve un valor*/
+SELECT e.usuario_id, e.id FROM blog_master.entradas e; 
+SELECT * FROM blog_master.usuarios u WHERE u.id = (SELECT COUNT(e.usuario_id) FROM blog_master.entradas e GROUP BY e.usuario_id ORDER BY COUNT(e.usuario_id) DESC LIMIT 1); 
+SELECT CONCAT(nombre,' ',apellidos) AS 'El Usuario con más entradas' FROM usuarios WHERE id=(SELECT COUNT(id) FROM entradas GROUP BY usuario_id ORDER BY COUNT(id) DESC LIMIT 1);
+
+/*Mostrar las categorías sin entradas*/
+SELECT * FROM blog_master.categorias c WHERE c.id NOT IN (SELECT e.categoria_id FROM blog_master.entradas e GROUP BY e.categoria_id);
+SELECT * FROM categorias WHERE id NOT IN (SELECT categoria_id FROM entradas);
+
+/*
+Consulta Multitabla
+Son consultas que sirven para consultar varias tablas en una sola sentencia
+*/
+/*Mostrar las entradas con el nombre del autor y el nombre de la categoría*/
+SELECT e.id, CONCAT(u.nombre, ' ', u.apellidos) AS Usuarios, c.nombre AS Categoría, e.titulo 
+FROM blog_master.entradas e, blog_master.usuarios u, blog_master.categorias c
+WHERE e.usuario_id = u.id AND e.categoria_id = c.id;
+
+/*Inner Join*/
+SELECT e.id, CONCAT(u.nombre, ' ', u.apellidos) AS Usuarios, c.nombre AS Categoría, e.titulo
+FROM blog_master.entradas e
+INNER JOIN blog_master.usuarios u ON e.usuario_id = u.id
+INNER JOIN blog_master.categorias c ON e.categoria_id = c.id;
+
+/*Mostrar el nombre de las categorías y al lado cuantas entradas tienen*/
+SELECT COUNT(e.id), e.categoria_id FROM blog_master.entradas e GROUP BY e.categoria_id;
+
+SELECT COUNT(e.id) AS 'Cantidad de Entradas', c.nombre 
+FROM blog_master.entradas e
+INNER JOIN blog_master.categorias c ON e.categoria_id = c.id
+GROUP BY e.categoria_id;
+
+SELECT c.nombre AS 'Categoría', COUNT(e.id) AS 'Cantidad de entradas'
+FROM categorias c, entradas e
+WHERE e.categoria_id=c.id GROUP BY e.categoria_id;
+
+/*Left Join (muestra todas las filas de la tabla de la izquierda)*/
+
+
 
 
