@@ -22,3 +22,72 @@
 body{
     background: url(../img/cubes.png) #f4f4f4; 
 }
+
+/*Cabebecera*/
+#cabecera{
+    /*border: 2px solid black;*/
+    width: 85%;
+    height: auto;
+    background: transparent;
+    margin: 0px auto;
+}
+
+/*Logotipo*/
+#logo{
+    /*border: 2px solid black;*/
+    float: left;
+    width: 540px;
+    height: 110px;
+    line-height: 90px;/*para centrar verticalmente (100px)*/
+}
+
+#logo a{
+    font-family: 'fajala', Helvetica;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: #2979cd;
+    text-shadow: 0px 0px 0px black, 1px 1px 1px black, 2px 2px 0px black;
+    transition: all 500ms;
+    margin-left: 10px;
+    /*border: 2px solid black;*/
+}
+
+#logo a:hover{
+    cursor: pointer;
+    text-shadow: 0px 0px 0px black, -1px -1px 1px black, -2px -2px 0px black;
+
+}
+
+/*Menu*/
+#menu{
+    clear: both;
+    border: 1px solid #c9c9c9;
+    border-radius: 8px;
+    box-shadow: 0px 1px 1px #eee;
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(to bottom, #f9f9f9 0px, #e9e9e9 100%);    
+    overflow: hidden;
+}
+
+#menu ul{
+    list-style: none;
+}
+
+#menu ul li{
+    float: left;
+    line-height: 44px;
+    border-right: 1px solid #d6d6d6;
+}
+
+#menu ul li a:hover{
+    background: linear-gradient(to bottom, #f2f2f2 0px, #dad9d4 100%);    
+}
+
+#menu ul li a{
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    color: #838282;
+}
