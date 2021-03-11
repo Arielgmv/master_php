@@ -13,6 +13,9 @@
         </form>
     </div>
     <div id="register" class="bloque">
+        <?php if(isset($_SESSION['errores'])): ?>
+            <?php echo '<pre>'; var_dump($_SESSION['errores']); echo '</pre>';?>
+        <?php endif; ?>
         <h3>Registrate</h3>
         <form action="registro.php" method="POST">
             <label for="nombre">Nombre</label>

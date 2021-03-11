@@ -10,6 +10,9 @@ $db=mysqli_connect($servidor, $usuario, $password, $basededatos);
 //Cuando venga una palabra con ñ o tildes funcionara bien 
 mysqli_query($db, "SET NAMES 'utf8'");
 
+//Iniciar la sesión
+session_start();
+
 
 //Comprobar la conexión
 /*if (mysqli_connect_errno()) {
