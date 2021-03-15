@@ -1,3 +1,4 @@
+<?php require_once '../includes/helpers.php'; ?>
 <!--Barra Lateral-->
 <aside id="sidebar">
     <div id="login" class="bloque">
@@ -20,6 +21,7 @@
         <form action="registro.php" method="POST">
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre">
+            <?php echo mostrarError($_SESSION['errores'], 'nombre'); ?>
 
             <label for="apellidos">Apellidos</label>
             <input type="text" name="apellidos">
