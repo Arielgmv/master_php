@@ -19,9 +19,12 @@ if (isset($_POST)) {
     //Consulta para comprobar las credenciales del usuario
     $sql = "SELECT * FROM blog_master.usuarios WHERE usuarios.email = '$email'";
     $login = mysqli_query($db, $sql);
+    /*echo '<pre>';
+    var_dump($login);
+    echo '</pre>';*/
     if ($login && mysqli_num_rows($login) == 1) {
         $usuario = mysqli_fetch_assoc($login);
-        echo '<pre>';
+        echo '<pre>';        
         var_dump($usuario);
         echo '</pre>';
         die();
