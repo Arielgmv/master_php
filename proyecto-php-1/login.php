@@ -24,25 +24,33 @@ if (isset($_POST)) {
     echo '</pre>';*/
     if ($login && mysqli_num_rows($login) == 1) {
         $usuario = mysqli_fetch_assoc($login);
-        echo '<pre>';        
+        /*echo '<pre>';        
         var_dump($usuario);
         echo '</pre>';
-        die();
-
+        die();*/
         //Comprobar la contraseña / cifrar
-        $password_segura = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
-        var_dump($password_segura);
-        die();
-    }   
+        $verify = password_verify($password, $usuario['password']);
+        if ($verify) {
+            //Utilizar una sesión para guardar los datos del usuario logueado
+            $_SESSION['usuario'] = $usuario;
+
+            if (isset($_SESSION['error_login'])) {
+                session_unset($_SESSION['error_login']);
+            }
+        }else {
+            //Si algo falla enviar una sesión con el fallo
+            $_SESSION['error_login'] = 'Login incorrecto!';
+        }
+    }else{
+        //mensaje de error
+        $_SESSION['error_login'] = 'Login incorrecto!';
+    }
 }
 
-
-
-
-
-
-//Utilizar una sesión para guardar los datos del usuario logueado
-
-//Si algo falla enviar una sesión con el fallo
-
 //Redirigir al index.php
+header('Location: index.php');
+
+/*echo '<pre>';        
+var_dump($_SESSION['usuario']);
+var_dump($_SESSION['error_login']);
+echo '</pre>';*/
