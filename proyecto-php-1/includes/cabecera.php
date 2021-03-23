@@ -1,4 +1,5 @@
 <?php require_once 'conexion.php'; ?>
+<?php require_once 'helpers.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 
