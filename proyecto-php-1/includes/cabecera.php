@@ -30,12 +30,16 @@
                     /*echo ('<pre>');
                     var_dump($categorias);
                     echo ('</pre>');*/
-                    while($categoria = mysqli_fetch_assoc($categorias)):
+                    if(!empty($categorias)) :
+                        while($categoria = mysqli_fetch_assoc($categorias)):
                 ?>
-                    <li>
-                        <a href="categoria.php?id=<?=$categoria['id']?>"><?=$categoria['nombre']?></a>
-                    </li>    
-                <?php endwhile; ?>
+                            <li>
+                                <a href="categoria.php?id=<?=$categoria['id']?>"><?=$categoria['nombre']?></a>
+                            </li>    
+                <?php
+                        endwhile; 
+                    endif;
+                ?>
                 <li>
                     <a href="./index.php">Sobre Nosotros</a>
                 </li>

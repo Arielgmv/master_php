@@ -190,6 +190,10 @@ WHERE e.categoria_id=c.id GROUP BY e.categoria_id;
 
 /*Left Join (muestra todas las filas de la tabla de la izquierda)*/
 
+SELECT e.*, c.* FROM entradas e
+INNER JOIN categorias c ON e.categoria_id = c.id
+ORDER BY e.id DESC LIMIT 4;
+
 
 
 
