@@ -14,10 +14,16 @@
             while ($entrada = mysqli_fetch_assoc($entradas)) :
     ?>
             <article class="entrada">
+                <?php 
+                /*echo ('<pre>');
+                var_dump($entrada); 
+                echo ('</pre>');*/
+                ?>                
                 <a href="">
                     <h2><?=$entrada['titulo']?></h2>
+                        <span class="fecha "><?=$entrada['categoria'].' | '.$entrada['fecha']?></span>
                         <p>
-                            <?=$entrada['descripcion']?>
+                            <?=substr($entrada['descripcion'], 0, 180)."..." ?>
                         </p>
                 </a>
             </article>
