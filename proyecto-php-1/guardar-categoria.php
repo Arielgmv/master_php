@@ -16,22 +16,18 @@ if (isset($_POST)) {
         $errores['nombre'] = "El nombre no es válido";
     }
 
-    $guardar_nombre = false;
-    if (count($errores) == 0) {
-        $guardar_nombre = true;
-    
+    /*echo '<pre>';
+    var_dump($nombre);   
+    var_dump($nombre_validado);
+    var_dump($errores);   
+    var_dump(count($errores));    
+    echo '</pre>';*/
+
+    if (count($errores) == 0) {        
         //insertar categoría en la BBDD
         $sql="INSERT INTO blog_master.categorias VALUES (null, '$nombre')";
-        $guardar=mysqli_query($db, $sql);
-
-        if ($guardar) {
-            $_SESSION['completado'] = "El registro se ha completado con éxito";            
-        } else {
-            $_SESSION['errores']['general'] = "Fallo al guardar el usuario!";
-        }
-    }else {
-        $_SESSION['errores'] = $errores;        
+        $guardar=mysqli_query($db, $sql);        
     } 
 }
 
-header('Location: crear-categoria.php');
+header('Location: index.php');

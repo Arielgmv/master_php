@@ -9,17 +9,6 @@
         usarlas al crear sus entradas
      </p>
      <br>
-    <!--Mostrar errores-->
-    <?php if(isset($_SESSION['completado'])): ?>
-        <div class="alerta alerta-exito"> 
-            <?=$_SESSION['completado']?>
-        </div>
-    <?php elseif(isset($_SESSION['errores']['general'])): ?>
-        <div class="alerta alerta-error"> 
-            <?=$_SESSION['errores']['general']?>
-        </div>
-    <?php endif; ?>
-
     <form action="guardar-categoria.php" method="POST">
         <label for="nombre">Nombre de la categoría</label>
         <input type="text" name="nombre">
