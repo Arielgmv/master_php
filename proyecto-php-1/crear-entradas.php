@@ -14,11 +14,22 @@
         <input type="text" name="titulo">
 
         <label for="descripcion">Descripción:</label>
-        <input type="text" name="descripcion">
+        <textarea name="descripcion"></textarea>
 
         <label for="categoria">Categoría:</label>
         <select name="categoria">
-        
+            <?php
+                $categorias = conseguirCategorias($db);
+                if(!empty($categorias)):
+                while($categoria = mysqli_fetch_assoc($categorias)):                    
+            ?>
+            <option value="<?=$categoria['id']?>">
+                    <?=$categoria['nombre']?>
+            </option>            
+            <?php
+                endwhile;
+                endif;
+            ?>
         </select>
         
         <input type="submit" value="Guardar">
