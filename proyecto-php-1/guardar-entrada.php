@@ -32,10 +32,10 @@ if (isset($_POST)) {
     if (count($errores) == 0) {        
         //insertar categoría en la BBDD
         $sql="INSERT INTO blog_master.entradas VALUES (null, $usuario, $categoria, '$titulo', '$descripcion', CURDATE());";
-        $guardar=mysqli_query($db, $sql);        
-    }else {
+        $guardar=mysqli_query($db, $sql);                
+        header('Location: index.php');
+    }else {        
         $_SESSION['errores_entrada'] = $errores;
+        header('Location: crear-entradas.php');        
     }
 }
-
-header('Location: index.php');
