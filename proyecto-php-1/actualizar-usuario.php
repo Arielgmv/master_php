@@ -54,26 +54,38 @@ if (isset($_POST)) {
     $guardar_usuario = false;
     if (count($errores) == 0) {
         $guardar_usuario = true;
+        $usuario = $_SESSION['usuario']['id'];
         
-        //actualizar usuario en la BBDD
-        $usuario_id = ($_SESSION['usuario']['id']);
-        /*var_dump($usuario_id);
-        die();*/
-        $sql="UPDATE blog_master.usuarios SET nombre ='$nombre', apellidos = '$apellidos', email = '$email' WHERE id=$usuario_id";
-        $guardar=mysqli_query($db, $sql);
-        
-        /*var_dump(mysqli_error($db));
-        die();*/
+        //Comprobar si el email ya existe
+        $sql = "SELECT id, email FROM usuarios WHERE email = '$email'";
+        $isset_email = mysqli_query($db, $sql);
+        $isset_user = mysqli_fetch_assoc($isset_email);
 
-        if ($guardar) {
-            $_SESSION['completado'] = "El registro se ha completado con éxito";            
+        echo '<pre>';
+        var_dump($isset_email);
+        var_dump($isset_user);
+        die();
+        echo '</pre>';
+
+        if ($isset_user['id'] == $usuario || empty($isset_user)) {
+            //actualizar usuario en la BBDD              
+            $sql="UPDATE blog_master.usuarios SET nombre ='$nombre', apellidos = '$apellidos', email = '$email' WHERE id= $usuario;";
+            $guardar=mysqli_query($db, $sql);
+            if ($guardar) {
+                $_SESSION['usuario']['nombre'] = $nombre;
+                $_SESSION['usuario']['apellidos'] = $apellidos;
+                $_SESSION['usuario']['email'] = $email;
+
+                $_SESSION['completado'] = "Tus datos se han actualizado con éxito";            
+            } else {
+                $_SESSION['errores']['general'] = "Fallo al actualizar tus datos!";
+            }
         } else {
-            $_SESSION['errores']['general'] = "Fallo al guardar el usuario!";
+            $_SESSION['errores']['general'] = "El correo ya existe";
         }
-        
     } else {
         $_SESSION['errores'] = $errores;        
     }
 }
 
-header('Location: index.php');
+header('Location: mis-datos.php');
