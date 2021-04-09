@@ -61,11 +61,12 @@ if (isset($_POST)) {
         $isset_email = mysqli_query($db, $sql);
         $isset_user = mysqli_fetch_assoc($isset_email);
 
-        echo '<pre>';
+        /*echo '<pre>';
         var_dump($isset_email);
         var_dump($isset_user);
+        var_dump($isset_user['id']);
         die();
-        echo '</pre>';
+        echo '</pre>';*/
 
         if ($isset_user['id'] == $usuario || empty($isset_user)) {
             //actualizar usuario en la BBDD              

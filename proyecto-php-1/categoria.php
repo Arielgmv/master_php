@@ -1,15 +1,28 @@
-<?php require_once './includes/cabecera.php'; ?>
+<?php require_once './includes/conexion.php'; ?>
+<?php require_once './includes/helpers.php'; ?>
+<?php
+    $categoria_actual = conseguirCategoria($db, $_GET['id']);
+    /*var_dump($categoria);
+    die();*/
+    if (!isset($categoria_actual['id'])) {
+        header("Location: index.php");
+    }
+?>
 
+<?php require_once './includes/cabecera.php'; ?>
 <?php require_once './includes/lateral.php'; ?>
 
 <!--Caja Principal, section / article-->
-<div id="principal">
-    <h1>Ultimas entradas</h1>
-    <?php        
-        $entradas = conseguirEntradas($db, true);
+<div id="principal">    
+    <?php
+    var_dump($categoria_actual);    
+    ?>
+    <h1>Entradas de <?=$categoria_actual['nombre']?></h1>
+    
+    <?php
+        $entradas = conseguirEntradas($db);
         /*echo ('<pre>');
-        var_dump($entradas);
-        die();
+        var_dump($entradas);        
         echo ('</pre>');*/
         if (!empty($entradas)) :
             while ($entrada = mysqli_fetch_assoc($entradas)) :
@@ -31,11 +44,7 @@
     <?php            
             endwhile;
         endif;
-    ?>   
-    
-    <div id="ver-todas">
-        <a href="entradas.php">Ver todas las entradas</a>
-    </div>
+    ?>
 </div>
 <!--Fin principal-->
 

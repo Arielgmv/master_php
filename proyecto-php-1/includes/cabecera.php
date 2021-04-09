@@ -26,10 +26,7 @@
                     <a href="./index.php">Inicio</a>
                 </li>
                 <?php
-                    $categorias = conseguirCategorias($db);
-                    /*echo ('<pre>');
-                    var_dump($categorias);
-                    echo ('</pre>');*/
+                    $categorias = conseguirCategorias($db);                    
                     if(!empty($categorias)) :
                         while($categoria = mysqli_fetch_assoc($categorias)):
                 ?>
@@ -48,6 +45,11 @@
                 </li>
             </ul>
         </nav>
+        <?php
+        /*echo ('<pre>');
+        var_dump($categorias);
+        echo ('</pre>');*/
+        ?>
     </header>
 
     <div id="contenedor">
