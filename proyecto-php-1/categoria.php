@@ -15,16 +15,16 @@
 <!--Caja Principal, section / article-->
 <div id="principal">    
     <?php
-    var_dump($categoria_actual);    
+    //var_dump($categoria_actual);    
     ?>
     <h1>Entradas de <?=$categoria_actual['nombre']?></h1>
     
     <?php
-        $entradas = conseguirEntradas($db);
+        $entradas = conseguirEntradas($db, null, $_GET['id']);
         /*echo ('<pre>');
         var_dump($entradas);        
         echo ('</pre>');*/
-        if (!empty($entradas)) :
+        if (!empty($entradas) && mysqli_num_rows($entradas) >=1) :
             while ($entrada = mysqli_fetch_assoc($entradas)) :
     ?>
             <article class="entrada">
@@ -43,8 +43,10 @@
             </article>
     <?php            
             endwhile;
-        endif;
+        else:
     ?>
+    <div class="alerta">No hay entradas en esta categoría</div>
+    <?php endif; ?>
 </div>
 <!--Fin principal-->
 
