@@ -22,7 +22,8 @@
     <?php
         $entradas = conseguirEntradas($db, null, $_GET['id']);
         /*echo ('<pre>');
-        var_dump($entradas);        
+        var_dump($_GET['id']);
+        var_dump($entradas); 
         echo ('</pre>');*/
         if (!empty($entradas) && mysqli_num_rows($entradas) >=1) :
             while ($entrada = mysqli_fetch_assoc($entradas)) :
@@ -33,9 +34,9 @@
                 var_dump($entrada); 
                 echo ('</pre>');*/
                 ?>                
-                <a href="">
+                <a href="entrada.php?id=<?=$entrada['id']?>">
                     <h2><?=$entrada['titulo']?></h2>
-                        <span class="fecha "><?=$entrada['categoria'].' | '.$entrada['fecha']?></span>
+                        <span class="fecha"><?=$entrada['categoria'].' | '.$entrada['fecha']?></span>
                         <p>
                             <?=substr($entrada['descripcion'], 0, 180)."..." ?>
                         </p>

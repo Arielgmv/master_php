@@ -194,6 +194,10 @@ SELECT e.*, c.* FROM entradas e
 INNER JOIN categorias c ON e.categoria_id = c.id
 ORDER BY e.id DESC LIMIT 4;
 
+SELECT e.*, c.nombre AS 'categoria' FROM entradas e
+INNER JOIN categorias c ON e.categoria_id = c.id
+WHERE e.categoria_id = 4
+ORDER BY e.id DESC;
 
 
 
