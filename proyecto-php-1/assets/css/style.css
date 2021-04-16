@@ -186,11 +186,12 @@ input[type="submit"],
 }
 
 .boton{
+    color: white !important;
     text-align: center;
     width: 135px;
 }
 
-.boton-naranja{
+.boton-naranja{    
     background: orange;
     border-color: #bd7d08;
 }
