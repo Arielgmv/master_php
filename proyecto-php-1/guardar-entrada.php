@@ -30,12 +30,23 @@ if (isset($_POST)) {
     echo '</pre>';*/
 
     if (count($errores) == 0) {        
-        //insertar categoría en la BBDD
-        $sql="INSERT INTO blog_master.entradas VALUES (null, $usuario, $categoria, '$titulo', '$descripcion', CURDATE());";
+        if(isset($_GET['editar'])){
+            $entrada_id = $_GET['editar'];
+            $usuario_id = $_SESSION['usuario']['id'];
+            $sql="UPDATE blog_master.entradas SET titulo='$titulo', descripcion='$descripcion', categoria_id=$categoria ".
+            "WHERE id=$entrada_id AND usuario_id=$usuario_id";
+        }else{
+            //insertar categoría en la BBDD
+            $sql="INSERT INTO blog_master.entradas VALUES (null, $usuario, $categoria, '$titulo', '$descripcion', CURDATE());";
+        }
         $guardar=mysqli_query($db, $sql);                
         header('Location: index.php');
     }else {        
         $_SESSION['errores_entrada'] = $errores;
-        header('Location: crear-entradas.php');        
+        if (isset($_GET['editar'])) {
+            header('Location: editar-entrada.php?id='.$_GET['editar']);
+        }else{
+            header('Location: crear-entradas.php');
+        }             
     }
 }
