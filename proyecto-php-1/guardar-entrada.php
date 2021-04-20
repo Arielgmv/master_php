@@ -25,7 +25,7 @@ if (isset($_POST)) {
     }
 
     /*echo '<pre>';
-    var_dump($errores);
+    var_dump($_GET['editar']);
     die();
     echo '</pre>';*/
 
