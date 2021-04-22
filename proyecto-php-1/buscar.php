@@ -1,13 +1,5 @@
-<?php require_once './includes/conexion.php'; ?>
-<?php require_once './includes/helpers.php'; ?>
 <?php
     if (!isset($_POST['busqueda'])) {
-        header("Location: index.php");
-    }
-    $busqueda = conseguirEntradas($db, null, null, $_POST['busqueda']);
-    /*var_dump($categoria);
-    die();*/
-    if (!isset($categoria_actual['id'])) {
         header("Location: index.php");
     }
 ?>
@@ -20,10 +12,10 @@
     <?php
     //var_dump($categoria_actual);    
     ?>
-    <h1>Entradas de <?=$categoria_actual['nombre']?></h1>
+    <h1>Búsqueda: <?=$_POST['busqueda']?></h1>
     
     <?php
-        $entradas = conseguirEntradas($db, null, $_GET['id']);
+        $entradas = conseguirEntradas($db, null, null, $_POST['busqueda']);
         /*echo ('<pre>');
         var_dump($_GET['id']);
         var_dump($entradas); 
