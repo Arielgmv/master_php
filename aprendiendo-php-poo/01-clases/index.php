@@ -35,7 +35,10 @@ class Coche{
 }//fin definicion de la clase
 //crear un objeto o instaciar la clase
 $coche=new Coche();
-//var_dump($coche);
+/*echo ('<pre>');
+var_dump($coche);
+die();
+echo ('</pre>');*/
 //usar los metodos
 echo $coche->getVelocidad().'<br/>';
 $coche->setColor('Negro');
@@ -51,6 +54,8 @@ echo 'La velocidad del coche es: '.$coche->getVelocidad().'<br/>';
 $coche2=new Coche();
 $coche2->setColor('verde');
 $coche2->setModelo('Gallardo');
-var_dump($coche).'<br/>';
+echo ('<pre>');
+var_dump($coche);
 var_dump($coche2);
+echo ('</pre>');
 ?>

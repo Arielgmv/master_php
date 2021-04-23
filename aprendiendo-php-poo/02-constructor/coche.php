@@ -24,7 +24,7 @@ class Coche{
     public $plazas;
 
     //constructor, metodo magico que se encarga de setear informacion
-    public function __construct($color, $marca, $modelo, $velocidad, $caballaje,$plazas){
+    public function __construct($color, $marca, $modelo, $velocidad, $caballaje, $plazas){
         $this->color=$color;
         $this->marca=$marca;
         $this->modelo=$modelo;
