@@ -1,7 +1,12 @@
 <?php
 require_once 'clases.php';
 $persona = new Persona();
-//$persona->setNombre("Ariel");
+$persona->setNombre("Ariel");
+$persona->setApellidos('Muñoz Villegas');
+$persona->setAltura(1.73);
+$persona->setEdad(40);
+$persona->hablar();
+$persona->caminar();
 echo('<pre>');
 var_dump($persona);
 echo('</pre>');
